@@ -1,0 +1,36 @@
+How to use the different codes :
+
+WARNING : All the time and frequency data are not in the good unit. The aythor gave the fmin and the step between the different 
+values of time and frequency so that one can adjust the good values for the FWHM in particular.
+
+1) Use "ecriture_input_Micchili2.py" in order to compare the plot of summation on frequency with the article (often shown) and to get
+the time range where the majority of the signal (burst) is.
+
+1bis) Use "fit2.py" with the outputfile of the precedent step, to plot.
+
+2) Use "ecriture_matrice_intensite.py" in order to compare the matrix intensity in a frequency vs time base. You will then have the
+frequency range on wich the burst is focused.
+
+If it doesn't work well, it could be because of 3 things mainly :
+
+--> Bad choice of time interval like tmax too high, or the signal is not on the range you proposed.
+
+--> You need to adjust vmin and vmax to see the contrast sometimes
+
+--> Check the file you gave at the beginning and compare to the burst number you wanted to use
+
+3) Use "ecriture_input_Micchili.py" in order to produce the summation on time (in the same output file you will have the mean and
+variance for each frequency which you can plot, with or without cutting the noise of the data)
+
+4) Use "fit.py" in order to plot the resulting fit with a function of your choice (gaussian(s) in this case).
+
+5) When you have all the data, use the table of data "donnees_freq_intensites" that you will have complete to produce a 
+"courbe_FWHM.txt" with all the data requested. Then use "tracer.py" with only little things to modify if you modified the number of
+points on the graph.
+
+Victor Tranchant 
+victor.tranchant@free.fr
+
+NB : In the case of the data by Gajjar, a modification has been done to the "fit.py", thus becoming "fit_Gajjar.py", in order
+to adapt to the form of the data. See the code for details
+
