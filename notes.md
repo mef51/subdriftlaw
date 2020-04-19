@@ -21,10 +21,10 @@ apr 2
 
 april 11
 ====
-* fitting stuff is working, now making script to process all the michilli bursts. 
+* fitting stuff is working, now making script to process all the michilli bursts.
 * found the edge of the burst (see bursts.csv) that makes a square window of data for autocorrelation
-    * some bursts (like bursts 11, 10, 9, 5, and 4) are really hard to see. Using a logscale for the colors kinda helps (`norm=matplotlib.colors.LogNorm()`)
-    
+    * some bursts (like bursts 11, 10, 9, 5, and 4) are really hard to see. Using a logscale for the colors kinda helps (`plt.imshow(..., norm=mcolors.LogNorm(vmin=0, vmax=5000))`)
+
 april 14
 =====
 * there is degeneracy in the fit: the solver can make sigma_x really big and then rotate it like crazy or it can make sigma_y big and rotate it a little
@@ -37,3 +37,10 @@ apr 15 meeting:
 * fix scales, use physical units
 * grab centre freq. from victor figure
 * get error on theta
+
+apr 18
+=====
+* switching to log scale for corr helps a lot. needed to flag bad values as black (there are negative values for some reason)
+* angle is clockwise from the negative y-axis. Weird. https://www.desmos.com/calculator/g1dhkffuvt
+	* sign error in twoD_gaussian. fixed. angle is counter-clockwise from positive x axis as intended
+* pcov gives variances of the parameters, root of that gives standard dev (error)
