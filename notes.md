@@ -41,6 +41,23 @@ apr 15 meeting:
 apr 18
 =====
 * switching to log scale for corr helps a lot. needed to flag bad values as black (there are negative values for some reason)
-* angle is clockwise from the negative y-axis. Weird. https://www.desmos.com/calculator/g1dhkffuvt
+* angle is clockwise from the negative y-axis. Weird. https://www.desmos.com/calculator/xa91ccx6gp
 	* sign error in twoD_gaussian. fixed. angle is counter-clockwise from positive x axis as intended
 * pcov gives variances of the parameters, root of that gives standard dev (error)
+
+apr 19
+===
+* if sigma_y > sigma_x: theta = theta - pi/2
+* michilli 2018 fig.1: time and freq. resolutions are 20.48us and 6.24 MHz
+* email says 10.24us and 1.5625 MHz
+* freq channel 0 = 4100.78125 MHz
+* fixed the axes
+
+apr 20
+===
+* with the right angle slope is just tan(theta).
+	* to get MHz/ms units multiply slope by 1.5625MHz/0.01024ms
+
+apr 21
+===
+* plots with drift speed and error done. need to get the central frequency
