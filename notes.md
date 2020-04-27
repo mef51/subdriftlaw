@@ -61,3 +61,37 @@ apr 20
 apr 21
 ===
 * plots with drift speed and error done. need to get the central frequency
+* donnees_freq_intensite.pdf has central frequencies for burst 1, 3, 6, 14, and 16
+	* i think these were generated with either fit.py or fit2.py
+	* not sure how valid a single gaussian fit is for these bursts, which look like multiple gaussian peaks?
+* for the central frequencies of the 5 bursts victor found, the lower frequency bursts have more drift! this is what Martin predicted.
+
+
+apr 22
+===
+* meeting:
+	* put log scale on burst
+	* do mhz/ms like in chime paper
+
+apr 23
+===
+* TODO:
+    * do gajjar (6-8 GHz) bursts
+	* fix the fit for burst #10
+    * make bursts more visible (log scale or truncate the scale)
+    * copy chime paper and list drifts in mhz/ms
+	* correct for pulse width by approximating tau_0 = b/cos(theta-pi/2), make that figure
+    * find central frequency of all bursts with gaussian fit. See bottom right panel of Chime figure: Fit gaussian to time integrated spectrum
+    * JPL has 2 GHz observations, decide if we can include those
+
+apr 25
+====
+* wip in gajjar. Fit looks good. I had to clip the spectrum because there were many negative values, possibly from the way I removed the error.
+	* (may have removed the background two different ways: with victor's loop and then my thing. just pick one (mine since it removes noise as a function of freq.))
+
+apr 26
+====
+* if i clip before autocorrelation i lose the gaussian - why?
+* some confusion between np.indices and np.meshgrid... switching to np.indices for now. meshgrid doesn't make sense to me atm and it keeps fucking up my fit
+* more problems with 11D.. 
+    * work on approximating tau_0 with sigma so that we can make an actually interesting plot. should be quick and higher payoff
