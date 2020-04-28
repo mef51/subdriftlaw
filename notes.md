@@ -93,5 +93,10 @@ apr 26
 ====
 * if i clip before autocorrelation i lose the gaussian - why?
 * some confusion between np.indices and np.meshgrid... switching to np.indices for now. meshgrid doesn't make sense to me atm and it keeps fucking up my fit
-* more problems with 11D.. 
+* more problems with 11D..
     * work on approximating tau_0 with sigma so that we can make an actually interesting plot. should be quick and higher payoff
+* https://www.desmos.com/calculator/i36rd5eyfu
+
+apr 27
+===
+* ended up just converting the angle the solver spit out but I have drifts for 11A and 11D now
