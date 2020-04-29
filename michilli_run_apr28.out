@@ -1,0 +1,170 @@
+  0%|          | 0/18 [00:00<?, ?it/s]
+processing 01_puppi_57747_C0531+33_0558_5.dm559.72.calibP.RM.DD.ASCII
+Data loaded
+finding auto-correlation...
+solution nlsq: [1.82917852e+03 5.11000000e+02 5.11000000e+02 1.73731526e+02
+ 4.73645867e+01 1.71657155e+00]
+parameter 1sigma: [3.74829755e-01 1.09023872e-02 3.52438613e-02 3.56652578e-02
+ 9.70147033e-03 8.53345713e-05]
+solver angle: 1.716571553275062 pos angle: 1.716571553275062
+drift: -1039.3089954743837
+drift error: 0.617100823170105
+saved figures/burst_1_figure.png
+  6%|▌         | 1/18 [10:24<2:56:55, 624.46s/it]
+processing 02_puppi_57747_C0531+33_0558_1183.dm559.72.calibP.RM.DD.ASCII
+Data loaded
+finding auto-correlation...
+solution nlsq: [ 82.16341612 511.         511.00000002 177.0809181   44.91187541
+  23.76544997]
+parameter 1sigma: [0.07340402 0.05064097 0.15511687 0.15853539 0.0401048  0.00034241]
+solver angle: 23.765449973714205 pos angle: 23.765449973714205
+drift: -739.4194627623691
+drift error: 1.2791312626780122
+saved figures/burst_2_figure.png
+ 11%|█         | 2/18 [20:50<2:46:36, 624.81s/it]
+processing 03_puppi_57747_C0531+33_0558_1202.dm559.72.calibP.RM.DD.ASCII
+Data loaded
+finding auto-correlation...
+solution nlsq: [186.77847751 511.         510.99999992 169.74900115  19.46388493
+  -1.51662418]
+parameter 1sigma: [1.14450011e-01 1.31701617e-02 1.03848768e-01 1.04168910e-01
+ 1.19230641e-02 1.00675983e-04]
+solver angle: -1.516624180395349 pos angle: -1.516624180395349
+drift: -2813.9663827457625
+drift error: 5.239848516051854
+saved figures/burst_3_figure.png
+ 17%|█▋        | 3/18 [31:42<2:38:17, 633.18s/it]
+processing 04_puppi_57747_C0531+33_0558_25437.dm559.72.calibP.RM.DD.ASCII
+Data loaded
+finding auto-correlation...
+solution nlsq: [  4.19946298 510.99999515 511.00001478 160.36032904  26.70623146
+   1.70748947]
+parameter 1sigma: [0.08507482 0.69444966 3.2142799  3.24553668 0.54045327 0.00490687]
+solver angle: 1.707489467737331 pos angle: 1.707489467737331
+drift: -1109.3192725528863
+drift error: 40.32159437500104
+saved figures/burst_4_figure.png
+ 22%|██▏       | 4/18 [42:30<2:28:46, 637.60s/it]
+processing 05_puppi_57747_C0531+33_0558_3683.dm559.72.calibP.RM.DD.ASCII
+Data loaded
+finding auto-correlation...
+solution nlsq: [  5.56756041 511.00000038 510.99999995  37.74738307 166.2804915
+   3.21378967]
+parameter 1sigma: [0.06998588 0.49645502 2.08425829 0.47418787 2.09186538 0.0042529 ]
+solver angle: 3.2137896682339937 pos angle: 1.6429933414390971
+drift: -2109.8196701879606
+drift error: 124.71583037688869
+saved figures/burst_5_figure.png
+ 28%|██▊       | 5/18 [53:15<2:18:37, 639.81s/it]
+processing 06_puppi_57747_C0531+33_0558_3687.dm559.72.calibP.RM.DD.ASCII
+Data loaded
+finding auto-correlation...
+solution nlsq: [158.93505032 511.         511.00000004 156.55770839  12.41668262
+   1.59494396]
+parameter 1sigma: [1.65387128e-01 1.34999416e-02 1.62850823e-01 1.62968341e-01
+ 1.29181498e-02 1.17435851e-04]
+solver angle: 1.5949439587634362 pos angle: 1.5949439587634362
+drift: -6317.7305028329565
+drift error: 30.73661865779567
+saved figures/burst_6_figure.png
+ 33%|███▎      | 6/18 [1:03:39<2:07:00, 635.06s/it]
+processing 07_puppi_57747_C0531+33_0558_3688.dm559.72.calibP.RM.DD.ASCII
+Data loaded
+finding auto-correlation...
+solution nlsq: [274.08812283 511.         511.         102.25927184  38.96918373
+   1.71812789]
+parameter 1sigma: [0.13355119 0.02015541 0.04936305 0.04982403 0.01898728 0.00030721]
+solver angle: 1.718127893325183 pos angle: 1.718127893325183
+drift: -1028.1722981251287
+drift error: 2.175250800222847
+saved figures/burst_7_figure.png
+ 39%|███▉      | 7/18 [1:13:59<1:55:34, 630.42s/it]
+processing 08_puppi_57747_C0531+33_0558_3689.dm559.72.calibP.RM.DD.ASCII
+Data loaded
+finding auto-correlation...
+solution nlsq: [247.44002339 511.         510.99999999 171.39539762  64.79272495
+   1.99262989]
+parameter 1sigma: [0.07064965 0.02619504 0.04528205 0.04895909 0.0184971  0.00017808]
+solver angle: 1.9926298878978872 pos angle: 1.9926298878978872
+drift: -340.0108641593874
+drift error: 0.16209638948331442
+saved figures/burst_8_figure.png
+ 44%|████▍     | 8/18 [1:24:43<1:45:45, 634.54s/it]
+processing 09_puppi_57747_C0531+33_0558_3690.dm559.72.calibP.RM.DD.ASCII
+Data loaded
+finding auto-correlation...
+solution nlsq: [  3.60179786 511.00000027 511.00000017 133.024941   -89.62803786
+   2.24276011]
+parameter 1sigma: [0.05086619 1.53245488 1.66869612 1.87890381 1.26597263 0.02464748]
+solver angle: 2.2427601141928344 pos angle: 2.2427601141928344
+drift: -191.82453431836797
+drift error: 9.704661961691322
+saved figures/burst_9_figure.png
+ 50%|█████     | 9/18 [1:35:15<1:35:03, 633.68s/it]
+processing 10_puppi_57747_C0531+33_0558_12568.dm559.72.calibP.RM.DD.ASCII
+Data loaded
+finding auto-correlation...
+solution nlsq: [   5.91208449  511.00000037  511.00000007 -130.60561575  -47.07411294
+   -1.39244814]
+parameter 1sigma: [0.07228006 0.63302199 1.57330265 1.59534473 0.57523675 0.00716349]
+solver angle: -1.3924481394557087 pos angle: -2.9632444662506052
+drift: 27.50603199656914
+drift error: 1.1285807128066854
+saved figures/burst_10_figure.png
+ 56%|█████▌    | 10/18 [1:45:49<1:24:30, 633.84s/it]
+processing 11_puppi_57748_C0531+33_0594_2.dm559.72.calibP.RM.DD.ASCII
+Data loaded
+finding auto-correlation...
+solution nlsq: [ 12.00962927 511.00000018 510.99999976 182.57011239  39.81075769
+   1.71801834]
+parameter 1sigma: [0.06718783 0.26611131 1.0105408  1.02512666 0.2224322  0.00180972]
+solver angle: 1.7180183431363614 pos angle: 1.7180183431363614
+drift: -1028.9485576094842
+drift error: 12.832904904019012
+saved figures/burst_11_figure.png
+ 61%|██████    | 11/18 [1:56:20<1:13:50, 632.92s/it]
+processing 12_puppi_57748_C0531+33_0594_48.dm559.72.calibP.RM.DD.ASCII
+Data loaded
+finding auto-correlation...
+solution nlsq: [ 83.6186647  510.99999999 511.00000004 137.48322035  28.82238584
+   4.86191343]
+parameter 1sigma: [0.08600473 0.03609572 0.13989045 0.14140131 0.02964355 0.00031895]
+solver angle: 4.861913431021838 pos angle: 4.861913431021838
+drift: -1012.8713199724995
+drift error: 2.193127945731207
+saved figures/burst_12_figure.png
+ 67%|██████▋   | 12/18 [2:07:03<1:03:36, 636.09s/it]
+processing 13_puppi_57748_C0531+33_0594_49.dm559.72.calibP.RM.DD.ASCII
+Data loaded
+finding auto-correlation...
+solution nlsq: [937.89834228 511.         511.         141.35401376  40.66982088
+   1.73586563]
+parameter 1sigma: [2.65759992e-01 1.31352506e-02 3.95537448e-02 4.00544093e-02
+ 1.15240500e-02 1.25703405e-04]
+solver angle: 1.735865627061994 pos angle: 1.735865627061994
+drift: -915.9757009725435
+drift error: 0.7103667304803064
+saved figures/burst_13_figure.png
+ 72%|███████▏  | 13/18 [2:17:41<53:02, 636.57s/it]
+processing 14_puppi_57748_C0531+33_0594_50.dm559.72.calibP.RM.DD.ASCII
+Data loaded
+finding auto-correlation...
+solution nlsq: [334.27050722 511.         510.99999998 159.61307367  11.69634805
+   4.75691681]
+parameter 1sigma: [1.49538780e-01 6.11711570e-03 7.13290037e-02 7.14424172e-02
+ 5.23183738e-03 4.66085819e-05]
+solver angle: 4.756916813394455 pos angle: 4.756916813394455
+drift: -3424.532932072147
+drift error: 3.589301050111523
+saved figures/burst_14_figure.png
+ 78%|███████▊  | 14/18 [2:28:17<42:25, 636.35s/it]
+processing 15_puppi_57748_C0531+33_0594_1269.dm559.72.calibP.RM.DD.ASCII
+Data loaded
+finding auto-correlation...
+solution nlsq: [531.91988788 511.         511.          65.08197489  47.78921036
+   2.00460266]
+parameter 1sigma: [0.25326592 0.02441218 0.02970171 0.03098981 0.02275473 0.00107286]
+solver angle: 2.004602659998698 pos angle: 2.004602659998698
+drift: -329.3955554900098
+drift error: 0.9265904079652391
+saved figures/burst_15_figure.png

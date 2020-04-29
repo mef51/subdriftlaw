@@ -23,7 +23,7 @@ april 11
 ====
 * fitting stuff is working, now making script to process all the michilli bursts.
 * found the edge of the burst (see bursts.csv) that makes a square window of data for autocorrelation
-    * some bursts (like bursts 11, 10, 9, 5, and 4) are really hard to see. Using a logscale for the colors kinda helps (`plt.imshow(..., norm=mcolors.LogNorm(vmin=0, vmax=5000))`)
+	* some bursts (like bursts 11, 10, 9, 5, and 4) are really hard to see. Using a logscale for the colors kinda helps (`plt.imshow(..., norm=mcolors.LogNorm(vmin=0, vmax=5000))`)
 
 april 14
 =====
@@ -76,13 +76,13 @@ apr 22
 apr 23
 ===
 * TODO:
-    * do gajjar (6-8 GHz) bursts
+	* do gajjar (6-8 GHz) bursts
 	* fix the fit for burst #10
-    * make bursts more visible (log scale or truncate the scale)
-    * copy chime paper and list drifts in mhz/ms
+	* make bursts more visible (log scale or truncate the scale)
+	* copy chime paper and list drifts in mhz/ms
 	* correct for pulse width by approximating tau_0 = b/cos(theta-pi/2), make that figure
-    * find central frequency of all bursts with gaussian fit. See bottom right panel of Chime figure: Fit gaussian to time integrated spectrum
-    * JPL has 2 GHz observations, decide if we can include those
+	* find central frequency of all bursts with gaussian fit. See bottom right panel of Chime figure: Fit gaussian to time integrated spectrum
+	* JPL has 2 GHz observations, decide if we can include those
 
 apr 25
 ====
@@ -94,9 +94,15 @@ apr 26
 * if i clip before autocorrelation i lose the gaussian - why?
 * some confusion between np.indices and np.meshgrid... switching to np.indices for now. meshgrid doesn't make sense to me atm and it keeps fucking up my fit
 * more problems with 11D..
-    * work on approximating tau_0 with sigma so that we can make an actually interesting plot. should be quick and higher payoff
+	* work on approximating tau_0 with sigma so that we can make an actually interesting plot. should be quick and higher payoff
 * https://www.desmos.com/calculator/i36rd5eyfu
 
 apr 27
 ===
 * ended up just converting the angle the solver spit out but I have drifts for 11A and 11D now
+
+apr 28
+===
+* burst 10: solver was spitting out negative sigma_x and sigma_y (which is not a big deal) but was leading to the wrong theta. putting abs() around sigma_x and sigma_y fixed the angle
+	* this burst still has two bursts so still need to window it. but its a minor correction.
+* annotating points: https://stackoverflow.com/questions/15910019/annotate-data-points-while-plotting-from-pandas-dataframe/15911372#15911372
