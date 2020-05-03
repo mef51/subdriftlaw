@@ -106,3 +106,10 @@ apr 28
 * burst 10: solver was spitting out negative sigma_x and sigma_y (which is not a big deal) but was leading to the wrong theta. putting abs() around sigma_x and sigma_y fixed the angle
 	* this burst still has two bursts so still need to window it. but its a minor correction.
 * annotating points: https://stackoverflow.com/questions/15910019/annotate-data-points-while-plotting-from-pandas-dataframe/15911372#15911372
+* trends are not promising. michili bursts are everywhere
+
+may 3
+===
+* after discussing with martin we realized we had measured pulse duration, and not arrival time as a function of frequency.
+* started working on ArrivalTimes.ipynb, which fits gaussians row by row and grabs arrival and end times for each frequency. 
+    * Final result of this is to have the dynamic spectrum of each burst marked with start and end times for each frequency channel.
