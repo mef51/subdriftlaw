@@ -111,5 +111,19 @@ apr 28
 may 3
 ===
 * after discussing with martin we realized we had measured pulse duration, and not arrival time as a function of frequency.
-* started working on ArrivalTimes.ipynb, which fits gaussians row by row and grabs arrival and end times for each frequency. 
+* started working on ArrivalTimes.ipynb, which fits gaussians row by row and grabs arrival and end times for each frequency.
     * Final result of this is to have the dynamic spectrum of each burst marked with start and end times for each frequency channel.
+
+may 6
+====
+* I finished the arrival time stuff but it's not useful at the moment.
+* martin re did parts of his analysis:
+    * There are two processes: a steep drift that is within the burst, and a much larger one that is from burst to burst (when there are multiple bursts in quick succession)
+* TODO:
+    * separate out the subbursts in 11A
+    * fix calculation of sigma_t
+
+may 7
+===
+* found autocorrelation of subbursts of 11A, stored as .npy files
+* found drifts. beware shearing when your cells aren't square. the major axis can look like the minor axis and vice versa
