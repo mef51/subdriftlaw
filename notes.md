@@ -127,3 +127,8 @@ may 7
 ===
 * found autocorrelation of subbursts of 11A, stored as .npy files
 * found drifts. beware shearing when your cells aren't square. the major axis can look like the minor axis and vice versa
+
+may 8
+===
+* i wonder if i should just do a gaussian fit to the time profile like in Josephy 2019 to get the pulse duration instead of using sigma_t. Its numbers don't really line up with a measurement by eye
+* i was fitting to some of the bursts i excluded so the fit is improved ANND adding the gajjar subbursts fits so well to the trend
