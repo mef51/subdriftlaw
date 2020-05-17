@@ -132,3 +132,7 @@ may 8
 ===
 * i wonder if i should just do a gaussian fit to the time profile like in Josephy 2019 to get the pulse duration instead of using sigma_t. Its numbers don't really line up with a measurement by eye
 * i was fitting to some of the bursts i excluded so the fit is improved ANND adding the gajjar subbursts fits so well to the trend
+
+may 17
+===
+* chris's corr2d is ridiculously fast. Also, pythonic file read is much 6x faster (30s to 5s) than the dogshit that is np.loadtxt()
