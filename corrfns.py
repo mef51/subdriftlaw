@@ -55,7 +55,7 @@ def auto_corr2D_viafft(data):
     temp_array_b[:,0:ny] = temp_array_a[:,ny-1:2*ny-1]
     temp_array_b[:,ny:2*ny-1] = temp_array_a[:,0:ny-1]
 
-    return temp_array_b/float(nx*ny)
+    return temp_array_b[:-1,:-1]#/float(nx*ny)
 
 def auto_corr_viafft(data):
 
@@ -84,3 +84,9 @@ def auto_corr_viafft(data):
 
     # Return result
     return result/float(nt)
+
+if __name__ == '__main__':
+    import numpy as np
+    test = np.zeros((4,4))
+    b = auto_corr2D_viafft(test)
+    print(test.shape, b.shape)

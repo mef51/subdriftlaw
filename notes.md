@@ -136,3 +136,9 @@ may 8
 may 17
 ===
 * chris's corr2d is ridiculously fast. Also, pythonic file read is much 6x faster (30s to 5s) than the dogshit that is np.loadtxt()
+
+may 18
+===
+* while working on finding the error on tw i noticed I used cos twice in the equation for tw when there's really a sin and a cos (see note).
+    * small correction
+* michilli bursts have full error bars
