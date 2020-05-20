@@ -142,3 +142,8 @@ may 18
 * while working on finding the error on tw i noticed I used cos twice in the equation for tw when there's really a sin and a cos (see note).
     * small correction
 * michilli bursts have full error bars
+
+may 19
+====
+* redid 11A and its subbursts to get errors
+* rename processgajjar to processgajjar11A lol.. will need to rewrite for 11D
