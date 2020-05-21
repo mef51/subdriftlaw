@@ -147,3 +147,10 @@ may 19
 ====
 * redid 11A and its subbursts to get errors
 * rename processgajjar to processgajjar11A lol.. will need to rewrite for 11D
+
+may 20
+====
+
+* redo drift vs tw
+* scale error by reduced chisq 
+    * https://stackoverflow.com/questions/52591979/how-to-obtain-the-chi-squared-value-as-an-output-of-scipy-optimize-curve-fit
