@@ -154,3 +154,13 @@ may 20
 * redo drift vs tw
 * scale error by reduced chisq 
     * https://stackoverflow.com/questions/52591979/how-to-obtain-the-chi-squared-value-as-an-output-of-scipy-optimize-curve-fit
+may 23
+====
+* drift errors are kinda wack. very small.. makes the fit innacurate when including errors. try:
+    * lmfit package to get a gaussian
+    * getting the drift using arrival times and fitting a line.
+    * figure out this line in the documentation for `absolute_sigma`: `pcov(absolute_sigma=False) = pcov(absolute_sigma=True) * chisq(popt)/(M-N)`
+    
+may 25
+===
+* before dicking around with the errors maybe just fix the bursts (M9, M10, etc.) that are clearly multiple bursts. and anyway scaling the errors didn't really make the fit better so
