@@ -163,4 +163,12 @@ may 23
     
 may 25
 ===
-* before dicking around with the errors maybe just fix the bursts (M9, M10, etc.) that are clearly multiple bursts. and anyway scaling the errors didn't really make the fit better so
+* before dicking around with the errors maybe just fix the bursts (M9, M10, M13, etc.) that are clearly multiple bursts. and anyway scaling the errors didn't really make the fit better so
+* New angle flipper calculator: https://www.desmos.com/calculator/f1x2pyfdix
+
+may 26
+===
+* Meeting TODO:
+    * fix 9
+    * frequency correct the gajjar bursts and add them in a different color
+* I found drifts for M10's subbursts. I used the autocorr sigma from the whole correlation instead of the individual ones, which is probably not right
