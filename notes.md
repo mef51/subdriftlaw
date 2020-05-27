@@ -172,3 +172,4 @@ may 26
     * fix 9
     * frequency correct the gajjar bursts and add them in a different color
 * I found drifts for M10's subbursts. I used the autocorr sigma from the whole correlation instead of the individual ones, which is probably not right
+* found m9 subburst drifts
