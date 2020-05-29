@@ -177,3 +177,8 @@ may 26
 may 27
 ===
 * found weighted center frequency of all gajjar and michilli subbursts. this is for correcting the drifts of the bursts
+
+may 28
+===
+* added chime burst, did a bunch of log/log fits, settled on a fit
+* 11D is missing errors
