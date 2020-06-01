@@ -182,3 +182,11 @@ may 28
 ===
 * added chime burst, did a bunch of log/log fits, settled on a fit
 * 11D is missing errors
+
+may 30
+===
+* made figs 3 and 4
+
+may 31
+===
+* TIL don't use plt.tight_layout() with plt.subplots_adjust()
