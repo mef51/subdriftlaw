@@ -190,3 +190,8 @@ may 30
 may 31
 ===
 * TIL don't use plt.tight_layout() with plt.subplots_adjust()
+
+june 1
+===
+* made figure 5
+* changed the font
