@@ -12,12 +12,13 @@ import matplotlib.cm as cm
 from scipy import pi as nombrepi
 from lmfit import Model
 from lmfit.models import LinearModel
+import matplotlib as mpl
 
 ### Nothing has to be modified except for the number of donnees listed below on the code ###
 
 ### Reading the input file
 
-donnees = open("courbe_FWHM.txt","r")  
+donnees = open("courbe_FWHM.txt","r")
 
 lignes = donnees.readlines()
 
@@ -39,12 +40,12 @@ c = 0
 cf = 0
 
 for i in range(1,s+1) :
-	
+
 	erreurFWHM[i-1] = float(lignes[i-1].split()[3])
 	erreurf[i-1] = float(lignes[i-1].split()[2])
-	
+
 	if (erreurFWHM[i-1] > 0) :
-		c += 1	
+		c += 1
 	if (erreurf[i-1] > 0) :
 		cf += 1
 
@@ -70,30 +71,30 @@ for i in range(1,s+1) :
 		FWHM[p+2] = float(lignes[i-1].split()[1])+erreurFWHM[i-1]
 		FWHM[p+3] = float(lignes[i-1].split()[1])
 		FWHM[p+4] = float(lignes[i-1].split()[1])
-		
+
 		horizontal[c2,0] = f[p+3]
 		horizontal[c2,1] = f[p]
 		horizontal[c2,2] = f[p+4]
-		ordonnee[c2,:] = FWHM[p+1] 
-		
+		ordonnee[c2,:] = FWHM[p+1]
+
 		vertical[c2,0] = FWHM[p]
 		vertical[c2,1] = FWHM[p+1]
 		vertical[c2,2] = FWHM[p+2]
 		abscisse[c2,:] = f[p]
 
 		c2 += 1
-		p+=5	
-				
+		p+=5
+
 	else :
 		f[p] = float(lignes[i-1].split()[0])
 		FWHM[p] = float(lignes[i-1].split()[1])
-		p+= 1			
+		p+= 1
 
 # Definition when you wawnt to plot with b = 0
 
-def lineaire(x,a) : 
+def lineaire(x,a) :
 	return a*x
-	
+
 gmodel = Model(lineaire)
 out = gmodel.fit(FWHM,x = f,a = 100)
 print(out.fit_report())
@@ -101,7 +102,7 @@ print(out.fit_report())
 r = sct.pearsonr(f,FWHM)
 print(r)
 
-###### Here you need to change the numbers of points from an author ###### 
+###### Here you need to change the numbers of points from an author ######
 
 donnees_Micchili = 5
 donnees_Law = 6
@@ -149,18 +150,21 @@ for i in range(1,donnees_Gajjar+1) :
 couleur = ['m']*donnees_Spitler + ['g']*donnees_Scholz + ['b']*donnees_Law + ['k']*donnees_Micchili + ['c']*donnees_Gajjar
 
 for i in range(1,c+1) :
-	
+
 	plt.plot(abscisse[i-1],vertical[i-1],'%s'%couleur[i-1])
 	plt.plot(horizontal[i-1],ordonnee[i-1],'%s'%couleur[i-1])
 
+fontsize = 14
+family = 'serif'
+plt.rcParams["font.family"] = family
 plt.plot(freqG,FWHMG,'cx',label = "Gajjar et al. (2018)")
 plt.plot(freqM,FWHMM,'ko',label = "Michilli et al. (2018)")
 plt.plot(freqL,FWHML,'bs',label = "Law et al. (2017)")
 plt.plot(freqSc,FWHMSc,'g+',label = "Scholz et al. (2016)")
 plt.plot(freqSp,FWHMSp,'m.',label = "Spitler et al. (2016)")
 plt.plot(f,out.best_fit,'r')
-plt.xlabel(ur"$\nu$ (GHz)")
-plt.ylabel("FWHM (MHz)")
-plt.legend()
-plt.savefig('FWHM_modifiee.pdf', dpi = 1000)
+plt.xlabel(u"$\\nu_\\mathrm{obs}$ (GHz)", fontsize=fontsize, family=family)
+plt.ylabel("FWHM (MHz)", fontsize=fontsize, family=family)
+plt.legend(fontsize=fontsize-4)
+for f in['png', 'eps', 'pdf']: plt.savefig('FWHM_modifiee.{}'.format(f), dpi = 1000)
 plt.show()
