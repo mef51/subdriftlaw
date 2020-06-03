@@ -152,7 +152,7 @@ may 20
 ====
 
 * redo drift vs tw
-* scale error by reduced chisq 
+* scale error by reduced chisq
     * https://stackoverflow.com/questions/52591979/how-to-obtain-the-chi-squared-value-as-an-output-of-scipy-optimize-curve-fit
 may 23
 ====
@@ -160,7 +160,7 @@ may 23
     * lmfit package to get a gaussian
     * getting the drift using arrival times and fitting a line.
     * figure out this line in the documentation for `absolute_sigma`: `pcov(absolute_sigma=False) = pcov(absolute_sigma=True) * chisq(popt)/(M-N)`
-    
+
 may 25
 ===
 * before dicking around with the errors maybe just fix the bursts (M9, M10, M13, etc.) that are clearly multiple bursts. and anyway scaling the errors didn't really make the fit better so
@@ -195,3 +195,25 @@ june 1
 ===
 * made figure 5
 * changed the font
+
+june 2
+===
+* made all figure fonts serif
+* made some cartooooons for fig 1 and 2
+* correcting the bursts by the center frequency has some error associated with it, need to account for that
+
+* The font on the figures is one of these (in order of what it looks for):
+['DejaVu Serif',
+ 'Bitstream Vera Serif',
+ 'Computer Modern Roman',
+ 'New Century Schoolbook',
+ 'Century Schoolbook L',
+ 'Utopia',
+ 'ITC Bookman',
+ 'Bookman',
+ 'Nimbus Roman No9 L',
+ 'Times New Roman',
+ 'Times',
+ 'Palatino',
+ 'Charter',
+ 'serif']

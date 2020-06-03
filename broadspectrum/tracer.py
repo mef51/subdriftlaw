@@ -15,7 +15,9 @@ from lmfit.models import LinearModel
 import matplotlib as mpl
 
 ### Nothing has to be modified except for the number of donnees listed below on the code ###
-
+fontsize = 14
+family = 'serif'
+plt.rcParams["font.family"] = family
 ### Reading the input file
 
 donnees = open("courbe_FWHM.txt","r")
@@ -154,17 +156,17 @@ for i in range(1,c+1) :
 	plt.plot(abscisse[i-1],vertical[i-1],'%s'%couleur[i-1])
 	plt.plot(horizontal[i-1],ordonnee[i-1],'%s'%couleur[i-1])
 
-fontsize = 14
-family = 'serif'
-plt.rcParams["font.family"] = family
-plt.plot(freqG,FWHMG,'cx',label = "Gajjar et al. (2018)")
-plt.plot(freqM,FWHMM,'ko',label = "Michilli et al. (2018)")
-plt.plot(freqL,FWHML,'bs',label = "Law et al. (2017)")
-plt.plot(freqSc,FWHMSc,'g+',label = "Scholz et al. (2016)")
-plt.plot(freqSp,FWHMSp,'m.',label = "Spitler et al. (2016)")
-plt.plot(f,out.best_fit,'r')
+
+plt.plot(freqG,FWHMG, 'cx', label = "Gajjar et al. (2018)")
+plt.plot(freqM,FWHMM, 'ko', label = "Michilli et al. (2018)")
+plt.plot(freqL,FWHML, 'bs', label = "Law et al. (2017)")
+plt.plot(freqSc,FWHMSc, 'g+', label = "Scholz et al. (2016)")
+plt.plot(freqSp,FWHMSp, 'm.', label = "Spitler et al. (2016)")
+plt.plot(f,out.best_fit, 'r')
 plt.xlabel(u"$\\nu_\\mathrm{obs}$ (GHz)", fontsize=fontsize, family=family)
 plt.ylabel("FWHM (MHz)", fontsize=fontsize, family=family)
+plt.tick_params(labelsize=fontsize-2)
 plt.legend(fontsize=fontsize-4)
-for f in['png', 'eps', 'pdf']: plt.savefig('FWHM_modifiee.{}'.format(f), dpi = 1000)
+# for f in['png', 'eps', 'pdf']: plt.savefig('FWHM_modifiee.{}'.format(f), dpi = 1000)
+for f in['png', 'eps', 'pdf']: plt.savefig('../paper_figures/Doppler-FRB121102.{}'.format(f), dpi = 1000)
 plt.show()
