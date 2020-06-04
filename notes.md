@@ -217,3 +217,7 @@ june 2
  'Palatino',
  'Charter',
  'serif']
+
+june 3
+===
+* figure tweakss. add tail to fig 2. plot 1 and 2sigma contours for fig 5.
