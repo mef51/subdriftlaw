@@ -26,3 +26,19 @@ june 9
     * who is making these shitty archaic data repositories? Their jnlp download manager downloads empty files and I'll have to write a wget script if I don't want to click a million links
 
 * CHIME cfod package seems to work fine... but doesn't look like a burst
+
+june 10
+===
+* cant seem to see anything in the 180814 data (both of them)
+
+june 13
+===
+* tried compiling SIGPROC, its filled with fortran errors. maybe I'm using a different version of fortran. they seem to use F77
+	* potential alternate? https://github.com/SixByNine/sigproc
+	* try PRESTO (https://www.cv.nrao.edu/~sransom/presto/) instead? which handles SIGPROC files
+	* tried PSRSoft, which is like a package manager for pulsar shit but sixproc build fails http://www.pulsarastronomy.net/wiki/Software/PSRSoft
+
+june 15
+===
+* Found another secret CHIME/FRB repo https://github.com/CHIMEFRB
+* compiling Mike Keith's version worked immediately lol (https://github.com/SixByNine/sigproc)

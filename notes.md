@@ -221,3 +221,7 @@ june 2
 june 3
 ===
 * figure tweakss. add tail to fig 2. plot 1 and 2sigma contours for fig 5.
+
+june 6
+===
+* paper submitted to science!
