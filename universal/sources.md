@@ -42,3 +42,18 @@ june 15
 ===
 * Found another secret CHIME/FRB repo https://github.com/CHIMEFRB
 * compiling Mike Keith's version worked immediately lol (https://github.com/SixByNine/sigproc)
+
+june 16
+===
+* askap: dont do `reader *.fil > data.csv` , it only takes the last beam file
+* `splice` seems to just append columns to the data
+* askap frb180110 is in beam 31, 32. DM (from shannon et al.) is 715.7 pc/cm^3
+* to dedisperse example:
+ `dedisperse 2018-01-10-07:07:52_0000000000000000.000000.31.fil -d 715.7 -b 336 > ddbeam31.fil`
+ `reader ddbeam31.fil > dd_beam31.csv`
+
+june 17
+===
+* dedispersion can be a little involved, but at its core you use the DM to compute the time delay then shift the frequency observations by that time delay. See sigproc documentation, Lorimer et al. 2007, Amiri et al. 2019
+* I was curious if you could get good correlations from png images of the bursts, and seems like you can, so long as you remove the noise so that there's enough snr between the burst pixels and the noise pixels. This method feels very sketchy, but maybe if you make sure the pixel grid corresponds to the data grid (ie. your image shouldn't be higher resolution than the png of the data) then you can extract correct physical parameters of the burst
+* A safer route is to try PRESTO (https://www.cv.nrao.edu/~sransom/presto/), which has a dedispersion planner thing that might be good. Otherwise we can write our own dedispersion thing
