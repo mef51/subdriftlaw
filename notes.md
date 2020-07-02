@@ -225,3 +225,7 @@ june 3
 june 6
 ===
 * paper submitted to science!
+
+june 26
+===
+* paper rejected from science! paper submitted to mnras!

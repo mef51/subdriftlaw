@@ -62,3 +62,35 @@ june 23
 ===
 Repeater Sources: See repeaters.csv
 Prioritize 171019, 180916.J0158+65, and 180814.J0422+73
+
+june 24
+===
+* new data from chime is in a better format: https://chime-frb-open-data.github.io/
+    * data doesnt match paper
+
+june 26
+===
+* i downloaded the pdf figure from the arxiv source for the 180916 paper, and turns out you can open it in photoshop and extract the images automatically with high fidelity! no screenshotting, no interpolation, pixel scale is an integer, very clean way to get the data from the figures. I now have 25 images that can be used for each burst
+
+june 29
+===
+* rgb2gray source: https://stackoverflow.com/questions/12201577/how-can-i-convert-an-rgb-image-into-grayscale-in-python
+* bursts 31, 32 show a burst in the same band with obviously different sub-burst drifts
+* first attempt yields 12/25 good fits for 180916+J0158+65. Can probably get a few more
+* y pixel scale is variable.. seems like plus or minus 1 pixel
+
+june 30
+===
+* used pixel scale to place physical axes on the images. save fit parameters so its faster
+
+july 1
+==
+* when finding slope from the fit angle we correct for the pixel scale as 
+$$
+\tan\theta	=\frac{y}{x}
+\frac{y/y_{s}}{x/x_{s}}	=\frac{y}{x}\frac{x_{s}}{y_{s}}=\frac{x_{s}}{y_{s}}\tan\theta
+$$
+
+* sigmax and sigmay are in pixel space, so they must be scaled by the pixel scale
+
+* early plot suggests that the bursts from 180916+J0158+6 are on trend with the bursts from 121102
