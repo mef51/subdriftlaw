@@ -94,3 +94,18 @@ $$
 * sigmax and sigmay are in pixel space, so they must be scaled by the pixel scale
 
 * early plot suggests that the bursts from 180916+J0158+6 are on trend with the bursts from 121102
+* ~need to investigate why the t_w for bursts 19 and 21 are negative~ just make sure sigmax and sigmay are positive
+
+july 2
+===
+* need to investigate differences in tw and how they correspond to the figures
+* Ziggy responded to my github issue, downsampling properly now based on his suggestion. I had tried decimating the data to 'downsample' but that didn't work so I downsample via averaging now, which is what I should have tried in the first place
+* downsampling produces some streaks in the burst. Will need to resolve this eventually
+
+july 3
+===
+* do boxcar downsampling for chime bursts.. convolve and sample (?)
+
+july 4
+===
+* did errors for chime 180916 bursts
