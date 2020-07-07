@@ -85,7 +85,7 @@ june 30
 
 july 1
 ==
-* when finding slope from the fit angle we correct for the pixel scale as 
+* when finding slope from the fit angle we correct for the pixel scale as
 $$
 \tan\theta	=\frac{y}{x}
 \frac{y/y_{s}}{x/x_{s}}	=\frac{y}{x}\frac{x_{s}}{y_{s}}=\frac{x_{s}}{y_{s}}\tan\theta
@@ -109,3 +109,16 @@ july 3
 july 4
 ===
 * did errors for chime 180916 bursts
+
+july 6
+===
+* in FRB2020 talks
+    * http://chime-frb.ca/repeaters
+* frb171019 is in beams 20, 21, 27, 28
+* there's an implementation of dedispersion here: https://github.com/danielemichilli/DM_phase/blob/master/DM_phase.py#L553
+    * the key line is `shift = (k_DM * DM * (reference_frequency**-2 - freq**-2) / dt).round().astype(int)`
+* The published DM doesn't give me what is shown in Kumar et al. 2019, i have to use a larger value, like the other burst. Not sure why
+
+july 7
+===
+* add 180916 bursts to 121102 bursts
