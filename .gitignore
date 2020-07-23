@@ -3,3 +3,4 @@ data/
 *#
 *.npy
 __pycache__
+DM_phase.py

@@ -122,3 +122,34 @@ july 6
 july 7
 ===
 * add 180916 bursts to 121102 bursts
+* Tried to use DM_phase to get a DM for 171019 but eeets not woooorkinggggg. Best value it gives is 380, which is worse than what I could do by eye
+    * ok it works if you use a large range and fine grid kinda
+
+july 8
+===
+* read hessels
+* do 180814
+* no matter the DM the relationship is just shifted (duration order is preserved)
+
+july 11
+===
+* shri from FRB2020 gave a good talk about DM
+* different DM's preserve "steepness" order but I don't think it will affect durations. So different DMs should only affect which A/tw curve the points land on (by only affecting A)
+* kinda fix my banding problem by using np.nanmean instead of np.mean when downsampling
+* 180814.J0442+73 data looks like shit, no bursts, noisy...
+
+july 15-16
+===
+* opened another chime issue, gonna process the 180916 data properly in the meantime (ie. not from images)
+
+july 17
+===
+* i found fits using the proper 180916 data and it mostly finds the same fits as the image technique did
+
+july 20
+=== 
+* calculate drifts wip
+
+july 23
+===
+* ive calculated the drifts from the data itself and it very closely matches what i got from the images, which validates that method. sometimes the quick and dirty way is also the correct way. 

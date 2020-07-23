@@ -20,7 +20,7 @@ def moments(data):
     return height, x, y, width_x, width_y, 2.0
 
 def twoD_Gaussian(point, amplitude, xo, yo, sigma_x, sigma_y, theta):
-    x, y = point
+    y, x = point
     xo = float(xo)
     yo = float(yo)
     a = (np.cos(theta)**2)/(2*sigma_x**2) + (np.sin(theta)**2)/(2*sigma_y**2)
