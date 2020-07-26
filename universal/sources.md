@@ -153,3 +153,12 @@ july 20
 july 23
 ===
 * ive calculated the drifts from the data itself and it very closely matches what i got from the images, which validates that method. sometimes the quick and dirty way is also the correct way. 
+
+july 25
+===
+* using parameter guesses to get better fits on some bursts
+    * tried a shotgun blast (every fit starts the search with the same ellipse. i chose the ellipse for burst 14 cuz it looked reasonable) --> doesn't work
+    * can fit some bursts when i feed it a good initial start as well as bounds on the amplitude.
+    * I noticed the initial guess from moments() is often very bad which might be why some fits are not found
+    * clipping the autocorrelation also works
+* finalized 180916 fits and drifts, 16 points in total

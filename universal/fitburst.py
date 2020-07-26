@@ -29,11 +29,11 @@ def twoD_Gaussian(point, amplitude, xo, yo, sigma_x, sigma_y, theta):
     g = amplitude*np.exp( - a*((x-xo)**2) - b*(x-xo)*(y-yo) - c*((y-yo)**2))
     return g.ravel()
 
-def fitgaussiannlsq(data, p0=[], sigma=0):
+def fitgaussiannlsq(data, p0=[], sigma=0, bounds=(-np.inf, np.inf)):
     # use curve-fit (non-linear leastsq)
     x = range(0, data.shape[1]); y = range(0, data.shape[0])
     x, y = np.meshgrid(x, y)
     p0 = moments(data) if p0 == [] else p0
     sigma = np.zeros(len(data.ravel())) + sigma
-    popt, pcov = scipy.optimize.curve_fit(twoD_Gaussian, (y, x), data.ravel(), p0=p0, sigma=sigma, absolute_sigma=True)
+    popt, pcov = scipy.optimize.curve_fit(twoD_Gaussian, (y, x), data.ravel(), p0=p0, sigma=sigma, absolute_sigma=True, bounds=bounds)
     return popt, pcov
