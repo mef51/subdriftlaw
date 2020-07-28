@@ -162,3 +162,12 @@ july 25
     * I noticed the initial guess from moments() is often very bad which might be why some fits are not found
     * clipping the autocorrelation also works
 * finalized 180916 fits and drifts, 16 points in total
+
+july 26
+===
+* stacked and dedispered the 180814 bursts, but having trouble finding them in the 16 second cutouts.
+    * needed to use the ubuntu subsystem to get around the memory error thing
+    
+july 27
+===
+* finalized 180916 and updated the figures, just 180814 is left
