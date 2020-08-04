@@ -171,3 +171,15 @@ july 26
 july 27
 ===
 * finalized 180916 and updated the figures, just 180814 is left
+
+july 28
+===
+* fit for 180916:15 can be tweaked a little. its too wide for the autocorrelation it seems
+
+aug 3
+===
+* did 180814 via images
+    * pixelxscale is ~348px/129units, y is ~650/64units
+* there is an inconsistency in burst181028: i get a different duration than the chime paper
+
+* I was accidentally plotting the raw drift instead of the drift corrected to the Michilli frequency... The fit is MUCH BETTER!! All three sources fall very close to the fit
