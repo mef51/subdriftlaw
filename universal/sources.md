@@ -147,12 +147,12 @@ july 17
 * i found fits using the proper 180916 data and it mostly finds the same fits as the image technique did
 
 july 20
-=== 
+===
 * calculate drifts wip
 
 july 23
 ===
-* ive calculated the drifts from the data itself and it very closely matches what i got from the images, which validates that method. sometimes the quick and dirty way is also the correct way. 
+* ive calculated the drifts from the data itself and it very closely matches what i got from the images, which validates that method. sometimes the quick and dirty way is also the correct way.
 
 july 25
 ===
@@ -167,7 +167,7 @@ july 26
 ===
 * stacked and dedispered the 180814 bursts, but having trouble finding them in the 16 second cutouts.
     * needed to use the ubuntu subsystem to get around the memory error thing
-    
+
 july 27
 ===
 * finalized 180916 and updated the figures, just 180814 is left
@@ -183,3 +183,12 @@ aug 3
 * there is an inconsistency in burst181028: i get a different duration than the chime paper
 
 * I was accidentally plotting the raw drift instead of the drift corrected to the Michilli frequency... The fit is MUCH BETTER!! All three sources fall very close to the fit
+
+aug 5
+===
+* plotting drift/nu_obs as chris suggested (to isolate the fit parameter to properties of the source) still shows good fit, and separation between sources that shows the fit is valid over distinct regions of the domain
+* redshifts:
+    frb121102: z = 0.19273 (josephy et al. 2019, frbcat.org)
+    frb180814.J0422+73: z < 0.1 (amiri et al. 2019)
+    frb1801916.J0158+65: z = 0.0337 (chime 2020b et al.)
+* added redshift corrected plots
