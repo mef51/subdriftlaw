@@ -192,3 +192,7 @@ aug 5
     frb180814.J0422+73: z < 0.1 (amiri et al. 2019)
     frb1801916.J0158+65: z = 0.0337 (chime 2020b et al.)
 * added redshift corrected plots
+
+aug 6
+===
+* fix redshift corrected plots, redshift makes slight difference 
