@@ -196,3 +196,9 @@ aug 5
 aug 6
 ===
 * fix redshift corrected plots, redshift makes slight difference 
+
+aug 7 
+===
+* added extra dedispersion to 180916 data to see how it affects the trend
+    * there is a definite shift in the data, however, as we argued in our referee report, i think the existence of a relationship is still there regardless of the DM. Now I was a bit limited in the DMs I could pick because of the width of the data set (which I could have worked around by zero-padding) but more importantly because the bursts would very quickly become positive outside of this delta DM range. I think this is a consequence of how the DM is found: it is an optimization process, so moving away from the found DM in either direction by any significant steps will be obviously incorrect. This is in fact a good thing: it means the DMs that are published are not as terrible as we've been assuming, even when the burst drifts come out slightly positive like in the case of frb180814: the DM can certainly be tweaked a little bit to get a negative slope, but any significant changes to the DM can be safely ruled out.
+    * I think this means that (a) having the right DM is important in obtaining a good fit between sources and (b) the fact that we have a good fit isn't coincidence, but a consequence of well-selected DMs on the part of CHIME and other authors. I want to therefore cautiously suggest that, if indeed there is a shared fit between sources, you can dedisperse bursts from other repeaters by picking a DM that lines that source's bursts with our fit
