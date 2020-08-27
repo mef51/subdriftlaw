@@ -195,10 +195,72 @@ aug 5
 
 aug 6
 ===
-* fix redshift corrected plots, redshift makes slight difference 
+* fix redshift corrected plots, redshift makes slight difference
 
-aug 7 
+aug 7
 ===
 * added extra dedispersion to 180916 data to see how it affects the trend
     * there is a definite shift in the data, however, as we argued in our referee report, i think the existence of a relationship is still there regardless of the DM. Now I was a bit limited in the DMs I could pick because of the width of the data set (which I could have worked around by zero-padding) but more importantly because the bursts would very quickly become positive outside of this delta DM range. I think this is a consequence of how the DM is found: it is an optimization process, so moving away from the found DM in either direction by any significant steps will be obviously incorrect. This is in fact a good thing: it means the DMs that are published are not as terrible as we've been assuming, even when the burst drifts come out slightly positive like in the case of frb180814: the DM can certainly be tweaked a little bit to get a negative slope, but any significant changes to the DM can be safely ruled out.
     * I think this means that (a) having the right DM is important in obtaining a good fit between sources and (b) the fact that we have a good fit isn't coincidence, but a consequence of well-selected DMs on the part of CHIME and other authors. I want to therefore cautiously suggest that, if indeed there is a shared fit between sources, you can dedisperse bursts from other repeaters by picking a DM that lines that source's bursts with our fit
+
+aug 8
+===
+* tried splitting onto 100ms windows but the 180814 burst still doesn't show up. Maybe the dispersion is bad? Maybe I'll try the other bursts? will need to remove the noise for those bursts..
+
+aug 14
+===
+* Ziggy replied with some suggestions about checking the true error of the drift measurement, and said he'll help with 180814 eventually. He also pointed out that the DM for repeaters changes.. We need to understand how this affects the trend and probably do a proper error analysis for the paper
+* FRB121102 DM Ranges
+    * In the data we've used:
+        * FRB121102 Gajjar (11A and 11D): 565 pc/cm^3,
+        * FRB121102 Michilli            : 559.7 pc/cm^3
+        * FRB180916.J0158+65            : 348.82 pc/cm^3
+        * FRB180814.J0455+73            : 189.4 pc/cm^3
+    * FRB121102 Spitler 2014 553-569 pc/cm^3
+    * FRB121102 Gajjar 2018 562-636 pc/cm^3 (583-601 pc/cm^3 for the bursts we've used)
+    * FRB121102 Michilli 2018 <= 1% of 559.7 = ~6 pc/cm^3
+    * FRB180916 CHIME 2020: 348-350
+    * FRB180814.J0455+74 Amiri 2019 188.9-190 pc/cm^3
+
+aug 15
+===
+* If I had read gajjar et al. 2018 more carefully I would have seen packages and data releases for all their bursts:
+    * http://seti.berkeley.edu/frb121102/technical.html
+    * https://github.com/mtlam/PyPulse
+    * perhaps we can add more 121102 bursts to our plot
+* Something we should say "we choose the structure-optimizing DM over the S/N-maximizing DM whenever possible"
+* There are several orders of magnitude between the drift rates of pulsar pulses and FRBs (e.g. Hewish 1980)
+* In order to incorporate the error on the DM into the drift measurement, find what the drift is at each end of DM range? But this doesn't take into account the variation of DM between bursts..
+* DM can also be frequency dependant (Lam et al. 2020) (at least based on pulsar observations, but DM is a value related to the ISM not the source so presumable this can also be true for FRBs)
+* A careful discussion of the DM and its influence on the validity of our result will be essential for convincing radio astronomers
+* I should be able to relate the delta t from the dedispersion equation to the observed slope. With that, I can just calculate directly what the drift error should be from the DM error
+
+aug 17
+===
+* paper notes:
+    * main text should include brief discussion of DM if possible, but the full argument can live in the "Materials and Methods"
+    * I can write the entier supplementary info section which includes the Materials and Methods
+        * I'd like to include every burst and autocorrelation if possible, labeled with the inferred drift measurement
+        * a description of the error analysis (esp. the crazy equation for tw) should be given
+        * Essentially summarize the document that processes the drifts and creates the trend figure; describe how the trend is found as well
+        * Detail how we control for DM
+* The heart of our problem is this:
+    * We are telling people "if you dedisperse all the bursts from a repeater source to the same DM then you will see this trend between the drift rate and duration.", which is a true statement.
+    * However, the first question is "Why should I dedisperse to the same DM given that the DM can vary per burst, and sometimes, like in FRB121102, vary in time?"
+    * What is our answer to this? We can say that for some sources (like 180916 and 180814) the range of DMs is very narrow. We can also say it is reasonable to assume that the DM is a property of the medium and not the source.
+
+aug 19
+===
+* met with fereshte and chris: proceed with plan regarding error bars
+
+aug 20
+===
+* wip on refactoring for multi-dm error analysis
+
+aug 27
+===
+* got data for dm vs. drift for frb121102 with ten trial DMs within the error range cited by Michilli.
+* As a way of making our paper more convincing Martin suggested plotting angle vs duration instead of drift vs duration
+    * this has the advantage of avoiding the discontinuity the drift experiences
+    * shifting the DM on the angle vs duration plot will show that the DM just shifts the plot
+    * I will also plot drift vs. DM and angle vs. DM

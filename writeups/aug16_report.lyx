@@ -1,0 +1,583 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{graphicx}
+\usepackage{pdflscape}
+%\usepackage[cm]{fullpage}
+%\usepackage[compact]{titlesec}
+%\date{}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "ae" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\topmargin 2.54cm
+\bottommargin 2.54cm
+\secnumdepth 4
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+The effects of burst DM on drift
+\end_layout
+
+\begin_layout Author
+Mohammed
+\end_layout
+
+\begin_layout Standard
+The paper is in good enough shape to start writing in earnest, but there
+ are a few more things to do before we can have a complete draft.
+ Last week I emailed Ziggy Pleunis from the CHIME/FRB team for help with
+ the data for FRB180814 after searching for the burst in 100ms chunks still
+ failed to reveal any signal.
+ He said he would be able to help me out this coming week.
+ I also sent along our FRB121102 paper to him and asked if he had any feedback
+ on it.
+ 
+\end_layout
+
+\begin_layout Standard
+The following is his response:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+Hi Mohammed, Thank you for your email.
+ I did read your paper when it appeared on the arXiv and I think it is a
+ nice idea that you are pursuing.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+I am a bit worried about the covariance of the drift rates you are measuring
+ with DM, as the DMs of repeaters are known to change with time and potentially
+ also from burst to burst.
+ What we did in the CHIME/FRB
+\family default
+ 
+\family typewriter
+`eight new
+\family default
+'
+\family typewriter
+ and `nine new repeaters' papers for fitting linear sub-burst drifting rates
+ is resampling the autocorrelations dedispersed to different DM values and
+ see how the drift rate varied with DM to test how robust the drift rate
+ measurements were.
+ Something like that might be worth trying for your analysis too, or you
+ could try and show that definitely the drifts you are seeing are not proportion
+al to frequency^-2 as expected for dispersion through a cold and tenuous
+ plasma.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I thanked him for his feedback and mentioned our test of the robustness
+ of the trend by varying the DM for all the bursts and seeing that while
+ the fit parameter changed, there was still a reciprocal relationship between
+ the drift and burst duration.
+ I also quickly checked that the drifts are not proportional to 
+\begin_inset Formula $\nu_{\text{obs}}^{-2}$
+\end_inset
+
+ but since we used data that was already dedispersed, this is something
+ the original authors of the data would have checked as well when dedispersing.
+ 
+\end_layout
+
+\begin_layout Standard
+However there remain some points that we should consider addressing if we
+ want our paper to be convincing to the FRB community:
+\end_layout
+
+\begin_layout Standard
+1.
+ The DM of bursts from FRB121102 can vary significantly with time and/or
+ with burst.
+ 
+\end_layout
+
+\begin_layout Standard
+2.
+ Our error analysis on the drift measurements does not incorporate the error
+ on the DM for each burst.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\bar under
+Point 1:
+\series default
+\bar default
+ 
+\end_layout
+
+\begin_layout Standard
+We use data that has all been dedispersed to the same DM.
+ I compiled a list of the DMs we used as well as the range of DMs that the
+ individual bursts can have:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Source
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DM pc/cm
+\begin_inset Formula $^{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FRB121102 Gajjar (11A and 11D)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+565
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FRB121102 Michilli
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+559.7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FRB180916.J0158+65 (CHIME)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+348.82
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FRB180814.J0455+73 (CHIME)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+189.4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+DMs used in our paper
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Source
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DM Range pc/cm
+\begin_inset Formula $^{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FRB121102 Spitler 2014
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+553-569
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FRB121102 Gajjar 2018 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+562-636
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FRB121102 Michilli 2018
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+~559.7
+\begin_inset Formula $\pm$
+\end_inset
+
+6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FRB180916 CHIME 2020
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+348-350
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FRB180814.J0455+74 Amiri 2019
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+188.9-190
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Range of DMs from individual bursts
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Looking at sources 180916 and 180814 for example, the DM range is quite
+ small, and we are likely safe given the test we did earlier with varying
+ the DMs of those sources.
+ However the DM for FRB121102 can vary by quite a bit, and in particular
+ the DM for the Gajjar bursts we used in our paper span a range of 583-601
+ pc/cm
+\begin_inset Formula $^{3}$
+\end_inset
+
+, which may move those points in a significant way.
+ It's worth noting that in Gajjar et al., the DMs they report in their table
+ are for maximizing S/N, but they choose a different DM (565 pc/cm
+\begin_inset Formula $^{3}$
+\end_inset
+
+) because it optimizes the structure of 11A.
+\end_layout
+
+\begin_layout Standard
+I believe we can address this point by performing a similar test to what
+ we did for 180916 where we varied the DM for all the bursts together, but
+ instead we randomly adjust the DMs of individual bursts and confirm that
+ the trend remains.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\bar under
+Point 2:
+\end_layout
+
+\begin_layout Standard
+Propagating the DM error through to the error on the drift measurement and
+ having an accurate error bar will settle the quickest criticism that our
+ paper prompts.
+ We can perhaps do this analytically, given that the dispersive equation
+ is given by 
+\begin_inset Formula 
+\begin{equation}
+\Delta t=k_{\text{DM}}(\nu_{\text{lo}}^{-2}-\nu_{\text{hi}}^{-2})\times\text{DM},
+\end{equation}
+
+\end_inset
+
+which shifts the intensity data and adds an error on the time data.
+\end_layout
+
+\begin_layout Standard
+Another way to achieve this is as Ziggy suggested: sample DMs from a gaussian
+ distribution with the published 1
+\begin_inset Formula $\sigma$
+\end_inset
+
+ errors, dedisperse the burst to that DM and find the corresponding distribution
+ of drift measurements.
+ The width of the distribution of the drift measurements can then be used
+ in the error bar.
+\end_layout
+
+\end_body
+\end_document
