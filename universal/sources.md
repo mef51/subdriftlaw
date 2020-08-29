@@ -264,3 +264,8 @@ aug 27
     * this has the advantage of avoiding the discontinuity the drift experiences
     * shifting the DM on the angle vs duration plot will show that the DM just shifts the plot
     * I will also plot drift vs. DM and angle vs. DM
+* drift range is huge and arbitrary due to discontinuity. get the range of angles, then use that as the angle error and calculate the drift error from that
+
+aug 29
+===
+* for 180916 plot angle vs duration and angle vs trial dm. you already have the data for this

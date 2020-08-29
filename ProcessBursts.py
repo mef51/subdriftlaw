@@ -150,7 +150,7 @@ leftDM = centerDM*0.99, centerDM*1.01 # "any bona fide dispersion measure variat
 trialDMs = np.linspace(centerDM*0.99, centerDM*1.01, num=10)
 DMcovariancedata = []
 
-for trialDM in tqdm(trialDMs[5:]):
+for trialDM in tqdm([centerDM]):
 	ploti = itertools.count(start=1, step=1)
 	plt.figure(figsize=(24, 36))
 	for burst, filename, edge, burstname in tqdm( zip(range(1, len(bursts['filename'])+1), bursts['filename'], bursts['edge'], bursts['name']), total=len(bursts['filename']) ):
