@@ -1,0 +1,173 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{graphicx}
+\usepackage{pdflscape}
+%\usepackage[cm]{fullpage}
+%\usepackage[compact]{titlesec}
+%\date{}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "ae" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\topmargin 2.54cm
+\bottommargin 2.54cm
+\secnumdepth 4
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Relationship between 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and 
+\begin_inset Formula $t_{w}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From the solver parameters the drift 
+\begin_inset Formula $d\nu_{obs}/dt_{D}$
+\end_inset
+
+ is calculated according to 
+\begin_inset Formula 
+\[
+\frac{d\nu_{obs}}{dt_{D}}=\frac{\nu_{res}}{t_{res}}\tan(\theta),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is the 2d Gaussian model angle and is between 
+\begin_inset Formula $(0,\pi)$
+\end_inset
+
+, and 
+\begin_inset Formula $\nu_{res}$
+\end_inset
+
+ and 
+\begin_inset Formula $t_{res}$
+\end_inset
+
+ are the spectral and time resolutions of the burst waterfall, respectively.
+ Then from eq (7) of Rajabi et al.
+ we find
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+-\frac{\nu_{res}}{t_{res}}\tan(\theta) & =\frac{A}{t_{w}},\\
+\tan(\theta) & =-\frac{t_{res}}{\nu_{res}}\frac{A}{t_{w}},\\
+\theta & =-\arctan(A'/t_{w}).
+\end{align*}
+
+\end_inset
+
+In order to match the range of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and 
+\begin_inset Formula $\arctan(\theta)$
+\end_inset
+
+ we transform 
+\begin_inset Formula $\theta$
+\end_inset
+
+ according to 
+\begin_inset Formula 
+\[
+\theta'=\pi/2-\theta,
+\]
+
+\end_inset
+
+so that it is on the interval 
+\begin_inset Formula $(-\pi/2,\pi/2)$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

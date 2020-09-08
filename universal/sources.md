@@ -269,3 +269,16 @@ aug 27
 aug 29
 ===
 * for 180916 plot angle vs duration and angle vs trial dm. you already have the data for this
+
+sept 4
+===
+* 1. get relationship of angle to tw from model, and add fits to angle plot
+    1.2 how does tw change
+* 2. start writing methods
+* 3. process 180814 asap
+
+sept 7
+===
+* burst 32 has an extremely long burst duration and small angle for ddm -1/2
+    * the solver paramters make no sense (negative amplitude, etc.) so either exclude it or fix it
+* the angle vs tw model is -atan(A/tw)
