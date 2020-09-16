@@ -1,0 +1,756 @@
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.00.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:36:58.9
+Source DEC (J2000)               : -02:18:09.8
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.01.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:36:53.5
+Source DEC (J2000)               : -02:21:45.9
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.02.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:36:47.9
+Source DEC (J2000)               : -02:25:21.9
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.03.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:36:42.1
+Source DEC (J2000)               : -02:28:57.8
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.04.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:36:35.9
+Source DEC (J2000)               : -02:32:33.8
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.05.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:36:29.5
+Source DEC (J2000)               : -02:36:09.8
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.06.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:40:44.6
+Source DEC (J2000)               : -02:20:00.9
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.07.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:40:41.8
+Source DEC (J2000)               : -02:23:37.0
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.08.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:40:38.7
+Source DEC (J2000)               : -02:27:13.0
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.09.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:40:35.5
+Source DEC (J2000)               : -02:30:49.0
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.10.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:40:32.1
+Source DEC (J2000)               : -02:34:25.0
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.11.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:40:28.6
+Source DEC (J2000)               : -02:38:01.1
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.12.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:44:33.2
+Source DEC (J2000)               : -02:18:14.0
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.13.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:44:32.9
+Source DEC (J2000)               : -02:21:50.1
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.14.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:44:32.5
+Source DEC (J2000)               : -02:25:26.2
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.15.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:44:32.2
+Source DEC (J2000)               : -02:29:02.2
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.16.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:44:31.8
+Source DEC (J2000)               : -02:32:38.2
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.17.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:44:31.3
+Source DEC (J2000)               : -02:36:14.3
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.18.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:48:21.4
+Source DEC (J2000)               : -02:20:01.4
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.19.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:48:23.7
+Source DEC (J2000)               : -02:23:37.5
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.20.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:48:26.0
+Source DEC (J2000)               : -02:27:13.5
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.21.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:48:28.4
+Source DEC (J2000)               : -02:30:49.5
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.22.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:48:30.9
+Source DEC (J2000)               : -02:34:25.5
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.23.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:48:33.5
+Source DEC (J2000)               : -02:38:01.7
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.24.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:52:07.4
+Source DEC (J2000)               : -02:18:10.8
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.25.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:52:12.2
+Source DEC (J2000)               : -02:21:46.9
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.26.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:52:17.1
+Source DEC (J2000)               : -02:25:22.9
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.27.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:52:22.2
+Source DEC (J2000)               : -02:28:58.9
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.28.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:52:27.5
+Source DEC (J2000)               : -02:32:34.8
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.29.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:52:33.1
+Source DEC (J2000)               : -02:36:10.9
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.30.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:55:58.1
+Source DEC (J2000)               : -02:19:54.4
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.31.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:56:05.5
+Source DEC (J2000)               : -02:23:30.4
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.32.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:56:13.2
+Source DEC (J2000)               : -02:27:06.4
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.33.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:56:21.2
+Source DEC (J2000)               : -02:30:42.3
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.34.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:56:29.6
+Source DEC (J2000)               : -02:34:18.2
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1
+Data file                        : 2018-01-10-07:07:52_0000000000000000.000000.00.fil
+Header size (bytes)              : 402
+Data size (bytes)                : 5505024
+Data type                        : filterbank (topocentric)
+Telescope                        : GMRT
+Datataking Machine               : FAKE
+Source Name                      : src21
+Source RA (J2000)                : 21:36:58.9
+Source DEC (J2000)               : -02:18:09.8
+Frequency of channel 1 (MHz)     : 1465.000000
+Channel bandwidth      (MHz)     : -1.000000
+Number of channels               : 336
+Number of beams                  : 0
+Beam number                      : 0
+Time stamp of first sample (MJD) : 58128.315994896882
+Gregorian date (YYYY/MM/DD)      : 2018/01/10
+Sample time (us)                 : 1266.46875
+Number of samples                : 16384
+Observation length (seconds)     : 20.7
+Number of bits per sample        : 8
+Number of IFs                    : 1

@@ -1,0 +1,23 @@
+Hey Fereshteh, Martin,
+
+In the Google Drive:
+
+https://drive.google.com/open?id=1lLwei60tkV3H1Q_cMH1oHQRBSBVegLUW
+
+there’s a new sub-folder called BL_Archives_ASCII.  I put ASCII data for two of the (bright) Gajjar et al. bursts there.  Here too the band is inverted.  Also, you’ll probably have to zap a few of the channels if you want to plot a nice dynamic spectrum.
+
+Other info:
+
+Centre of band: 6407.7148 MHz
+Bandwidth: -3562.5 MHz (inverted band)
+Channel width: -1.46484375 MHz (inverted band)
+Number of channels: 2432
+Time resolution: 4.0958926622802e-05 seconds
+
+Do you really need _all_ the Gajjar et al. bursts?  Maybe I can just download a couple more of the brightest ones?  They’re a bit of a pain to process before the raw time/frequency resolution is quite high.
+
+Please check out the files in the Google Drive, let me know if it makes sense, if you have any problems, or any questions.  As before, the data are de-Faradayed and de-dispersed.  Cautionary note there: one needs to assume an optical RM and DM for that, and that depends a bit on what metric one chooses.
+
+Cheers,
+
+Jason

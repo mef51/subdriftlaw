@@ -1,0 +1,2 @@
+Files contain posterior probability regions for fast radio bursts. 
+Values of pixels are posterior probability density for burst locations. 

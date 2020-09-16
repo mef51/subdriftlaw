@@ -1,7 +1,23 @@
-data/
+# Data things
+*.ASCII
+*.msgpack
+*.npy
+*.npz
+*.fits
+*.xml
+*.md5
+*.fil
+*beam*.csv
+CSIRO_DAP_Metadata/
+*.hdr
+2001.10275/
+*sample.zip
+*.dat
+
 .ipynb_checkpoints/
 *#
-*.npy
 __pycache__
 DM_phase.py
 *~
+sigproc.pdf
+*.swp
