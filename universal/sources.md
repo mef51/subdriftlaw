@@ -282,3 +282,28 @@ sept 7
 * burst 32 has an extremely long burst duration and small angle for ddm -1/2
     * the solver paramters make no sense (negative amplitude, etc.) so either exclude it or fix it
 * the angle vs tw model is -atan(A/tw)
+
+sept 9
+===
+* the angle vs tw model is actually atan(tw/A)
+
+sept 11
+===
+* lol i missed a lot
+    * fix the points on angle vs tw that have bad fits
+    * check martin's deldta dm derivation and figure out delta theta
+    * chris needs data for his idea
+    * check martin's determination of beta nu_0 stuff
+* ~burst 32 is still fucky on ddm = -0.5~ fixed
+
+sept 14
+===
+* i have delta_DM, i need to know what delta theta is given that (which is presumably what Martin derived)
+* found offset fits for angle vs duration
+* wip on calculating deltatheta.. need to read the doc more
+
+sept 15
+===
+* chris reproduced my results and showed that fit is optimal at a certain DM
+* my dedispersion has an extra minus sign so when I dedispersed to -1/2, 1, and 2 pc/cm^3 what I actually did was dedisperse to 1/2, -1, and -2 pc/cm^3
+    * fixed

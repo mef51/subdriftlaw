@@ -98,28 +98,33 @@ Relationship between
 
 \end_layout
 
+\begin_layout Author
+Mohammed
+\end_layout
+
 \begin_layout Standard
-From the solver parameters the drift 
+Given 
+\begin_inset Formula $\theta$
+\end_inset
+
+ from the 2d Gaussian model which is between 
+\begin_inset Formula $(0,\pi)$
+\end_inset
+
+ and is the angle from the positive time axis to the semi-major axis of
+ the ellipse, the drift 
 \begin_inset Formula $d\nu_{obs}/dt_{D}$
 \end_inset
 
  is calculated according to 
 \begin_inset Formula 
-\[
-\frac{d\nu_{obs}}{dt_{D}}=\frac{\nu_{res}}{t_{res}}\tan(\theta),
-\]
+\begin{align}
+\frac{d\nu_{obs}}{dt_{D}} & =\frac{\nu_{res}}{t_{res}}\tan(\theta),
+\end{align}
 
 \end_inset
 
 where 
-\begin_inset Formula $\theta$
-\end_inset
-
- is the 2d Gaussian model angle and is between 
-\begin_inset Formula $(0,\pi)$
-\end_inset
-
-, and 
 \begin_inset Formula $\nu_{res}$
 \end_inset
 
@@ -128,45 +133,66 @@ where
 \end_inset
 
  are the spectral and time resolutions of the burst waterfall, respectively.
- Then from eq (7) of Rajabi et al.
- we find
+ In order to find a relationship between the model angle and burst duration
+ 
+\begin_inset Formula $t_{w}$
+\end_inset
+
+ we substitute into eq (7) of Rajabi et al.
+ and find
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
-\begin{align*}
+\begin{align}
 -\frac{\nu_{res}}{t_{res}}\tan(\theta) & =\frac{A}{t_{w}},\\
-\tan(\theta) & =-\frac{t_{res}}{\nu_{res}}\frac{A}{t_{w}},\\
-\theta & =-\arctan(A'/t_{w}).
-\end{align*}
+\tan(\theta) & =\frac{A'}{t_{w}}.
+\end{align}
 
 \end_inset
 
-In order to match the range of 
+In order to compare 
 \begin_inset Formula $\theta$
 \end_inset
 
  and 
+\begin_inset Formula $t_{w}$
+\end_inset
+
+ directly we can invert the 
+\begin_inset Formula $\tan(\theta)$
+\end_inset
+
+, however we must first introduce a substitution 
+\begin_inset Formula $\theta=\theta'+\pi/2$
+\end_inset
+
+, so that the function is on the same range as 
 \begin_inset Formula $\arctan(\theta)$
 \end_inset
 
- we transform 
-\begin_inset Formula $\theta$
-\end_inset
-
- according to 
-\begin_inset Formula 
-\[
-\theta'=\pi/2-\theta,
-\]
-
-\end_inset
-
-so that it is on the interval 
+, ie., 
 \begin_inset Formula $(-\pi/2,\pi/2)$
 \end_inset
 
+.
+ Then,
+\begin_inset Formula 
+\begin{align}
+\tan(\theta) & =\frac{A'}{t_{w}},,\\
+\tan(\theta'+\pi/2) & =\frac{A'}{t_{w}}\\
+\frac{\sin(\theta'+\pi/2)}{\cos(\theta'+\pi/2)} & =\frac{A'}{t_{w}},\\
+-\frac{1}{\tan(\theta')} & =\frac{A'}{t_{w}},\\
+\theta' & =\arctan(t_{w}/A''),
+\end{align}
 
+\end_inset
+
+where the new constant 
+\begin_inset Formula $A''$
+\end_inset
+
+ absorbs all previous constants and the negative sign.
 \end_layout
 
 \end_body
