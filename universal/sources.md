@@ -307,3 +307,16 @@ sept 15
 * chris reproduced my results and showed that fit is optimal at a certain DM
 * my dedispersion has an extra minus sign so when I dedispersed to -1/2, 1, and 2 pc/cm^3 what I actually did was dedisperse to 1/2, -1, and -2 pc/cm^3
     * fixed
+
+sept 18
+===
+* 180914 bursts are overdispersed
+
+sept 19
+===
+* the angle vs tw plot shows that even within a narrow range of dms, you can dedisperse bursts to validate any model you want
+
+sept 21
+===
+* generated the parameter files for a range of DMs for FRB180814
+* generated plots. the three bursts fit the trend
