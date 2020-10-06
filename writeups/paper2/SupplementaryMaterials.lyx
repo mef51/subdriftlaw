@@ -1,0 +1,555 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{graphicx}
+\usepackage{pdflscape}
+%\usepackage[cm]{fullpage}
+%\usepackage[compact]{titlesec}
+%\date{}
+\usepackage{scicite}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "ae" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\topmargin 2.54cm
+\bottommargin 2.54cm
+\secnumdepth 4
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Supplementary Materials
+\end_layout
+
+\begin_layout Author
+Mohammed Chamma
+\end_layout
+
+\begin_layout Section*
+Materials and Methods
+\end_layout
+
+\begin_layout Standard
+This section will describe the process of deriving measurements of the sub-burst
+ drift rate and the burst duration from dynamic spectra of Fast Radio Bursts,
+ and is largely based on the autocorrelation technique described in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hessels2019,CHIME2019c"
+literal "false"
+
+\end_inset
+
+.
+ In addition, we describe tests to the robustness of the inverse trend between
+ the drift rate and the burst duration through variations of the DM, which
+ show that small variations of the DM serve to rotate the FRB dynamic spectra,
+ and, even though they affect the measured value of the sub-burst drift
+ rate, do not affect the relative trend between bursts.
+ 
+\end_layout
+
+\begin_layout Standard
+Dynamic spectra of bursts are obtained from several sources and processed
+ based on the format they are made available in, and are typically dedispersed
+ to the DMs presented in their respective publications.
+ Bursts from the repeater FRB121102 were obtained from 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gajjar2018,Michilli2018,CHIME2019c"
+literal "false"
+
+\end_inset
+
+.
+ These data were taken as presented in Fig.
+ 2 of 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gajjar2018"
+literal "false"
+
+\end_inset
+
+, Fig.
+ 1 of 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Michilli2018"
+literal "false"
+
+\end_inset
+
+, and Fig.
+ 5 of 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "CHIME2019c"
+literal "false"
+
+\end_inset
+
+, and range in frequency from ~600 Mhz to 8 GHz.
+ For all bursts from FRB121102, we used the structure-optimized dedispersed
+ spectra without modification which corresponds to DMs of 565, 559.7, and
+ 563.6 pc/cm
+\begin_inset Formula $^{3}$
+\end_inset
+
+ from 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gajjar2018,Michilli2018,CHIME2019c"
+literal "false"
+
+\end_inset
+
+, respectively.
+ Data for FRB180916.J0158+65 and FRB180814.J0422+73 are available from the
+ public data archive for the CHIME telescope (chime-frb-open-data.github.io)
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "CHIME2019a,Amiri2020periodic"
+literal "false"
+
+\end_inset
+
+.
+ Dedispersed bursts from FRB180916.J0158+65 are used at a DM of 348.82 pc/cm
+\begin_inset Formula $^{3}$
+\end_inset
+
+, though we also investigated the effect of small variations of this DM,
+ as discussed later.
+ Data for FRB180814.J0422+74 is provided at its original resolution and without
+ dedispersion.
+ The range of DMs used for this source in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "CHIME2019a"
+literal "false"
+
+\end_inset
+
+ vary between 188.9-190 pc/cm
+\begin_inset Formula $^{3}$
+\end_inset
+
+.
+ We find that a good fit between this data and our model exists for DMs
+ in between 188.9-189.4 pc/cm
+\begin_inset Formula $^{3}$
+\end_inset
+
+.
+ However we will tentatively argue that the shape of the FRB180814.J0422+7
+ bursts suggests too aggressive of a dedispersion and that a slightly lower
+ DM of 188.7-188.8 pc/cm
+\begin_inset Formula $^{3}$
+\end_inset
+
+ is optimal in terms of the burst shape expected when taken in context with
+ the bursts from the other two sources.
+ In all cases dynamic spectra are downsampled in frequency to increase SNR.
+ When a dynamic spectrum consists of a train of multiple bursts, we separate
+ the components and measure the drift rate and duration of each burst separately
+, as described in Fig 3.
+ of 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rajabi2020b"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Even when from the same source, fast radio bursts can have DMs that differ
+ from each other and that potentially also vary with time 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gajjar2018"
+literal "false"
+
+\end_inset
+
+, which raises questions about which DM is appropriate to use.
+ For this work we choose a single DM per source since multiple bursts from
+ short duration pulse trains (which should have a single canonical DM) obey
+ the inverse relationship between the sub-burst drift rate and burst duration,
+ and a single DM simplifies the analysis.
+ We found that small variations in the DM (on the order of 5%) can increase
+ the spread of the points on a drift vs.
+ duration plot and can translate the points up or down, which clearly affects
+ the fit, but the existence of the relationship in general remains.
+ Additionally, because the DM is primarily a property of the interstellar
+ medium and not the source, any model that requires a fine-tuned selection
+ of DMs adds additional parameters and complexity that require justification.
+ For example, a model that selects DMs based on maximizing structure 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gajjar2018,Hessels2019"
+literal "false"
+
+\end_inset
+
+ as a selection criteria brings with it assumptions that components of the
+ burst are emitted (and arrive) simultaneously across a large frequency
+ range 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hessels2019"
+literal "false"
+
+\end_inset
+
+.
+ While this criteria advantageously gives a narrow range of DMs to choose
+ from, there is no reason to strictly adhere to it from burst to burst.
+ Therefore, in general, we limit ourselves to the range of DMs found from
+ all the bursts as a whole when considering variations, and for the analysis
+ proper we select a single DM for every burst from a particular source.
+\end_layout
+
+\begin_layout Standard
+The general pipeline that every burst is put through is written in Python
+ and consists of computing the autocorrelation of the signal, fitting a
+ two-dimensional Gaussian to the resulting autocorrelation, and a calculation
+ of the physical quantities of interest from the fit parameters: namely
+ the sub-burst drift rate and the burst duration.
+ The autocorrelation of the spectrum measures the self-similarity of the
+ burst in frequency and time space and for FRBs results in an ellipsoid
+ with an intensity that follows a 2D Gaussian 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hessels2019"
+literal "false"
+
+\end_inset
+
+.
+ Before autocorrelation and depending on the source and/or burst, some noise
+ removal is performed.
+ For the bursts from FRB121102 and FRB180916.J0158+65 this is done by subtracting
+ the background from the entire spectrum, which is obtained from a time-average
+ of twenty or so samples taken prior to the burst.
+ For FRB180814.J0422+73, due to the raw format the bursts are provided in,
+ a noise mask was acquired through correspondence and the channels are normalize
+d by the standard deviation of the intensity.
+ We compute the autocorrelation of the dynamic spectrum using an intermediate
+ FFT, which allows us to perform the correlation through a multiplication
+ and is much faster.
+ After multiplication we perform an inverse FFT and the result is the autocorrel
+ation of the burst.
+ The shape of the autocorrelation is an ellipsoid centered about its peak
+ that varies in width and angle.
+ Thus, the next step is to find parameters for the following functional
+ form of a rotate-able two-dimensional Gaussian, 
+\begin_inset Formula 
+\begin{align}
+G(x,y) & =A\exp(-a(x-x_{0})^{2}-b(x-x_{0})(y-y_{0})-c(y-y_{0})^{2}),\\
+a & =\frac{\cos^{2}(\theta)}{2\sigma_{x}^{2}}+\frac{\sin^{2}(\theta)}{2\sigma_{y}^{2}},\\
+b & =\frac{\sin(2\theta)}{2\sigma_{x}^{2}}-\frac{\sin(2\theta)}{2\sigma_{y}^{2}},\\
+c & =\frac{\sin^{2}(\theta)}{2\sigma_{x}^{2}}+\frac{\cos^{2}(\theta)}{2\sigma_{y}^{2}},
+\end{align}
+
+\end_inset
+
+where the free parameters are 
+\begin_inset Formula $A,x_{0},y_{0},\sigma_{x},\sigma_{y}$
+\end_inset
+
+, and 
+\begin_inset Formula $\theta$
+\end_inset
+
+, which are the amplitude, position of the center, standard deviation along
+ the 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+ axes, and angle from the positive x-axis to the semi-major axis of the
+ ellipsoid.
+ To find these parameters we use the
+\family typewriter
+ scipy.optimize.curve_fit 
+\family default
+package, which performs a non-linear least squares to find a fit.
+ The package also returns a covariance matrix, which we calculate the standard
+ deviation of the parameters from by taking the square root of the diagonal
+ terms.
+ These errors are then scaled by the reduced 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+ computed from the residual between the autocorrelation and the Gaussian
+ fit.
+ The error calculated this way while useful does not capture the entire
+ error budget which depends more significantly on the error in the DM as
+ well the parts of the burst spectra that have been masked out.
+ With the parameters found, we check which of the two widths 
+\begin_inset Formula $\sigma_{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{y}$
+\end_inset
+
+ is larger and rotate 
+\begin_inset Formula $\theta$
+\end_inset
+
+ by 
+\begin_inset Formula $\pi/2$
+\end_inset
+
+ to coincide with the definition of 
+\begin_inset Formula $\theta$
+\end_inset
+
+ we have chosen, which is the angle to the semi-major axis.
+ We then choose to transform 
+\begin_inset Formula $\theta$
+\end_inset
+
+ so that it lies within the range 
+\begin_inset Formula $(0,\pi)$
+\end_inset
+
+ to simplify later comparisons.
+ It is possible to constrain the solver so that it only searches for solutions
+ where one of the widths is larger or for angles that lie in our preferred
+ range but this often results in no solution being found.
+ With 
+\begin_inset Formula $\theta$
+\end_inset
+
+, the sub-burst drift rate of the burst is calculated via 
+\begin_inset Formula 
+\begin{equation}
+\frac{d\nu_{\mathrm{obs}}}{dt_{D}}=\frac{\nu_{\mathrm{res}}}{t_{\mathrm{res}}}\tan\theta,
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\nu_{\mathrm{res}}$
+\end_inset
+
+ and 
+\begin_inset Formula $t_{\mathrm{res}}$
+\end_inset
+
+ are the frequency and time resolutions of the dynamic spectrum.
+ The burst duration measured from the fit parameters is found through 
+\begin_inset Formula 
+\begin{equation}
+t_{\mathrm{w}}=t_{\mathrm{res}}\frac{\sigma_{m}\sigma_{M}}{\sqrt{\sigma_{m}^{2}\cos^{2}(\theta)+\sigma_{M}^{2}\sin^{2}(\theta)}},
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\sigma_{m}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{M}$
+\end_inset
+
+ are the minimum and maximum of 
+\begin_inset Formula $\sigma_{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{y}$
+\end_inset
+
+, respectively.
+ This expression is derived by projecting the semi-minor axis of an ellipse
+ rotated through 
+\begin_inset Formula $\theta$
+\end_inset
+
+ onto the time-axis.
+ These expressions are also used to derive error formulae in order to propagate
+ the parameter errors to the the values of 
+\begin_inset Formula $d\nu_{\mathrm{obs}}/dt_{D}$
+\end_inset
+
+ and 
+\begin_inset Formula $t_{\mathrm{w}}$
+\end_inset
+
+.
+ These are the error bars shown in Fig (??), and do not take into account
+ errors on the DM or other sources of error.
+ 
+\end_layout
+
+\begin_layout Standard
+With these measurements of the sub-burst drift rate 
+\begin_inset Formula $d\nu_{\mathrm{obs}}/dt_{D}$
+\end_inset
+
+ and the burst duration 
+\begin_inset Formula $t_{w}$
+\end_inset
+
+ from each burst, we plot their relationship and compare it to the model
+ described by eq.
+ (??) and in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rajabi2020b"
+literal "false"
+
+\end_inset
+
+.
+ Because of the dependance on the frequency of observation 
+\begin_inset Formula $\nu_{\mathrm{obs}}$
+\end_inset
+
+ on the right-hand-side, we plot 
+\begin_inset Formula $\nu_{\mathrm{obs}}^{-1}d\nu_{\mathrm{obs}}/dt_{D}$
+\end_inset
+
+ vs.
+ 
+\begin_inset Formula $t_{\mathrm{w}}$
+\end_inset
+
+, which provides us a fit parameter that is independent of the observation
+ frequency.
+ We calculate the observation frequency 
+\begin_inset Formula $\nu_{\mathrm{obs}}$
+\end_inset
+
+ of each burst via an intensity-weighted average of the time-averaged frequency
+ series.
+ We used the 
+\family typewriter
+scipy.odr.RealData 
+\family default
+package, which uses orthogonal distance regression and incorporates the
+ errors on the data to find a fit.
+ This fit differs slightly between sources, and a single fit that includes
+ all sources can be found 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+TODO:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+How do you test its robustness with DM variations?
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+How do you optimize DM based on the previous test?
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Stampcard
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "scibib"
+options "Science"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

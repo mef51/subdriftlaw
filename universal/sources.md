@@ -320,3 +320,44 @@ sept 21
 ===
 * generated the parameter files for a range of DMs for FRB180814
 * generated plots. the three bursts fit the trend
+
+sept 23
+===
+* see meeting notes
+
+sept 25
+===
+* If I use the proper resolution for 180917 i can no longer see the burst
+* when dispersed, the chime bursts seem to bow the other way than say the lorimer burst.. why?
+
+sept 28
+===
+* there was a mistake in my dedispersion code for the 180916 trial dm points: they bend the right way now.
+* Martin wrote up a document that explains how to handle differing reference frequencies
+* started writing methods
+    * Science guidelines: https://www.sciencemag.org/authors/instructions-preparing-initial-manuscript
+* Amiri et al. 2019 has a model for the sub-bursts of 180917, maybe I should use it when splitting up the bursts
+
+sept 29
+===
+* i need to redo the angle vs duration plot for 180916 with the proper dedispersion code
+
+sept 30
+===
+* Remaining analysis:
+    * 180916 angle vs duration
+        * add padding when dedispersing to handle roll overs
+    * split up and process burst 180917 from frb180914
+    * find center_f properly for CHIME data
+
+oct 1
+===
+* first draft of methods is done
+* found center_f. some of them look weird but they're mostly good
+
+oct 5
+===
+* no need to zero pad, just find the max peak and roll the entire array by the fixed amount required to center the burst
+* redid the analysis for FRB180916 with corrected dedispersion. No major change. Fit improved slightly. DM variations still act as a rotation of the autocorrelation.
+    * notably center_f didn't change results much either
+

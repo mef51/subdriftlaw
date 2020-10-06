@@ -37,3 +37,10 @@ def fitgaussiannlsq(data, p0=[], sigma=0, bounds=(-np.inf, np.inf)):
     sigma = np.zeros(len(data.ravel())) + sigma
     popt, pcov = scipy.optimize.curve_fit(twoD_Gaussian, (y, x), data.ravel(), p0=p0, sigma=sigma, absolute_sigma=True, bounds=bounds)
     return popt, pcov
+
+def findCenter(burstwindow):
+    freqspectrum = np.nanmean(burstwindow, axis=1)
+    data = freqspectrum[50:463][0]
+    x = data.keys()
+    xo = sum(x*data)/sum(data)
+    return xo # return the central frequency

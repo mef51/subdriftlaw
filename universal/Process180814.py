@@ -30,9 +30,12 @@ def dedisperse(wfall, dm, freq, dt):
 	k_dm = 1. / 2.41e-4
 	dedisp = np.zeros_like(wfall)
 
-	ref_freq = freq[0]
+	ref_freq = freq[0]### ORIGINAL
+	# ref_freq = freq[-1]
+	print("ref_freq", ref_freq)
 
-	shift = (k_dm * dm * (ref_freq ** -2 - freq ** -2) / dt)
+	shift = (k_dm * dm * (ref_freq ** -2 - freq ** -2) / dt) ### ORIGINAL (low freq anchor)
+	# shift = (k_dm * dm * (freq ** -2 - ref_freq ** -2) / dt)
 	shift = shift.round().astype(int)
 
 	for i, ts in enumerate(wfall):
@@ -54,7 +57,10 @@ def read_static_mask(static_mask):
 		bad_chans += list(range(int(x[i][0]), int(x[i][1]), 1))
 	return bad_chans
 
-def loadburstdata(burst, datadir='data/CHIME_FRB180814.J0422+73/', ddm=0, downsample=128, plot=False, save=True, forceFreshLoad=False):
+def loadburstdata(burst, tres, datadir='data/CHIME_FRB180814.J0422+73/', ddm=0, downsample=128, plot=False, save=True, forceFreshLoad=False):
+	"""
+	tres: time resolution in milliseconds
+	"""
 	dm = 189.4 + ddm
 	outputfile = "{}_dm{}".format(burst, dm)
 
@@ -83,13 +89,14 @@ def loadburstdata(burst, datadir='data/CHIME_FRB180814.J0422+73/', ddm=0, downsa
 			intensity[i,...] = (ts - mean) / std
 
 	# CHIME/FRB constants
-	dt = 0.00098304  # s
+	dt = tres/1000 # s
 	fbottom = 400.1953125  # MHz
 	bw = 400.  # MHz
 	nchan = 16384
 	df = bw / nchan
 	freq = np.arange(fbottom, fbottom + bw, df) + df / 2.
 
+	print(binning)
 	wfall = dedisperse(intensity, dm, freq, dt=dt*binning)
 	print(wfall.shape)
 	# band-averaged time-series
@@ -98,25 +105,35 @@ def loadburstdata(burst, datadir='data/CHIME_FRB180814.J0422+73/', ddm=0, downsa
 	# find peak
 	peak_idx = np.nanargmax(ts)
 	sub = subband(wfall, downsample)
+	print(tres)
+	tleft, tright = 30, 50
+	# if tres == 0.98304:
+	# 	tleft, tright = 30, 50
+	# elif tres == 1.96608:
+	# 	tleft, tright = 80, 100
+	# 	tleft, tright = 30, 50
 
 	# plot
 	if plot:
 		fig, ax = plt.subplots(2, sharex=True,
 			gridspec_kw={"hspace": 0., "height_ratios": [1, 3]})
 
-		ax[0].plot(ts[peak_idx-30:peak_idx+50])
-		ax[1].imshow(sub[...,peak_idx-30:peak_idx+50], origin="lower",
+		ax[0].plot(ts[peak_idx-tleft:peak_idx+tright])
+		ax[1].imshow(sub[...,peak_idx-tleft:peak_idx+tright], origin="lower",
 			aspect="auto", interpolation="nearest")
 
 		ax[1].set_xlabel("Time [samples]")
 		ax[1].set_ylabel("Frequency [subbands]")
 		print("saving waterfall{}.png".format(burst))
 		plt.savefig("waterfall{}.png".format(burst))
-
 	if save:
-		np.save('{}{}'.format(datadir, outputfile), sub[...,peak_idx-30:peak_idx+50])
+		# np.save('{}{}'.format(datadir, outputfile), sub[...,peak_idx-30:peak_idx+50])
+		np.save('{}{}'.format(datadir, outputfile), sub[...,peak_idx-tleft:peak_idx+tright])
 
-	return sub[...,peak_idx-30:peak_idx+50]
+
+	# return sub[...,peak_idx-30:peak_idx+50]
+	# return sub[...,peak_idx-80:peak_idx+100]
+	return sub[...,peak_idx-tleft:peak_idx+tright]
 
 def processBurst(burstwindow, burstkey, p0=[], popt_custom=[], bounds=(-np.inf, np.inf), nclip=None, clip=None, ploti=None):
 	"""
@@ -206,26 +223,29 @@ def processBurst(burstwindow, burstkey, p0=[], popt_custom=[], bounds=(-np.inf, 
 #######################
 
 
-burstdirs = ['180814', '180911', '180919']
+# burstdirs = ['180814', '180911', '180919']
+burstdirs = ['180814', '180917']
 
 datadir='data/CHIME_FRB180814.J0422+73'
 
 cmap = plt.get_cmap('gray_r')
 cmap.set_bad(color = 'w', alpha = 1.)
 
-time_res = 0.98304 # ms
+res = {    #(tres, fres)
+	'180814': (0.98304, 400/16384),
+	'180911': (0.98304, 400/16384),
+	# '180917': (1.96608, 400/16384),
+	'180917': (0.98304, 400/16384),
+	'180919': (0.98304, 400/16384),
+}
+
+# time_res = 0.98304 # ms
 freq_res = 400/16384*128 # MHz
 lowest_freq = 400.20751953125 # MHZ
 
-res = {    #(tres, fres)
-	'180814': (0.983, 400/16384),
-	'180911': (0.983, 400/16384),
-	'180917': (1.966, 400/16384),
-	'180919': (0.983, 400/16384),
-}
-
 dm = 189.4
-for ddm in tqdm([189 - dm, 189.8 - dm, 190 - dm, 188.9 - dm, 0]):
+# for ddm in tqdm([189 - dm, 189.8 - dm, 190 - dm, 188.9 - dm, 0]):
+for ddm in tqdm([0]):
 	plt.figure(figsize=(10, 15))
 	ploti = itertools.count(start=1, step=1)
 	popts, perrs, drifts, drift_errors, angles, red_chisqs, keys = [], [], [], [], [], [], []
@@ -233,9 +253,11 @@ for ddm in tqdm([189 - dm, 189.8 - dm, 190 - dm, 188.9 - dm, 0]):
 	errorfile     = '{}/chime_180814_param_errors_dm{}.csv'.format(datadir, dm + ddm)
 	for burst in burstdirs:
 		print(burst)
+		time_res = res[burst][0] # ms
 		keys.append(int(burst))
+
 		# find msgpack files for 1 event (easiest to put them all in one directory)
-		burstwindow = loadburstdata(burst, ddm=ddm)
+		burstwindow = loadburstdata(burst, tres=time_res, ddm=ddm, forceFreshLoad=True)
 		if burst == '180919': 	# clean up some remaining noise on 180919
 			burstwindow[27:32, ...] = np.nan
 			burstwindow[104:106, ...] = np.nan
@@ -251,8 +273,8 @@ for ddm in tqdm([189 - dm, 189.8 - dm, 190 - dm, 188.9 - dm, 0]):
 	perrs['drift error (mhz/ms)'] = drift_errors
 	perrs['red_chisq']            = red_chisqs
 
-	popts.to_csv(parameterfile)
-	perrs.to_csv(errorfile)
+	popts.to_csv(parameterfile, index_label='name')
+	perrs.to_csv(errorfile, index_label='name')
 
-	plt.savefig("180814_ddm_{}.png".format(ddm))
+	plt.savefig("FRB180814_ddm_{}.png".format(ddm))
 	# plt.show()
