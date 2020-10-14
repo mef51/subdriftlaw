@@ -7,6 +7,15 @@ import corrfns, fitburst
 from tqdm import tqdm
 import pandas as pd
 
+def findCenter(burstwindow):
+	#freqspectrum = np.nanmean(burstwindow, axis=1)
+	# To be honest I wrote this with pandas a long time ago and I'm not sure why but it works
+	freqspectrum = pd.DataFrame(burstwindow.sum(axis=1)[:, None])
+	data = freqspectrum[:][0]
+	x = data.keys()
+	xo = sum(x*data)/sum(data)
+	return xo # return the central frequency
+
 def dedisperse(wfall, dm, freq, dt):
 	"""Dedisperse a dynamic spectrum.
 
@@ -32,7 +41,7 @@ def dedisperse(wfall, dm, freq, dt):
 
 	ref_freq = freq[0]### ORIGINAL
 	# ref_freq = freq[-1]
-	print("ref_freq", ref_freq)
+	# print("ref_freq", ref_freq)
 
 	shift = (k_dm * dm * (ref_freq ** -2 - freq ** -2) / dt) ### ORIGINAL (low freq anchor)
 	# shift = (k_dm * dm * (freq ** -2 - ref_freq ** -2) / dt)
@@ -42,7 +51,6 @@ def dedisperse(wfall, dm, freq, dt):
 		dedisp[i] = np.roll(ts, shift[i])
 
 	return dedisp
-
 
 def subband(wfall, nsub):
 	nchan, nsamp = wfall.shape
@@ -57,7 +65,10 @@ def read_static_mask(static_mask):
 		bad_chans += list(range(int(x[i][0]), int(x[i][1]), 1))
 	return bad_chans
 
-def loadburstdata(burst, tres, datadir='data/CHIME_FRB180814.J0422+73/', ddm=0, downsample=128, plot=False, save=True, forceFreshLoad=False):
+def loadburstdata(burst, tres, datadir='data/CHIME_FRB180814.J0422+73/', ddm=0, downsample=128, plot=False,
+					cshift=0,
+					save=True,
+					forceFreshLoad=False):
 	"""
 	tres: time resolution in milliseconds
 	"""
@@ -96,14 +107,16 @@ def loadburstdata(burst, tres, datadir='data/CHIME_FRB180814.J0422+73/', ddm=0, 
 	df = bw / nchan
 	freq = np.arange(fbottom, fbottom + bw, df) + df / 2.
 
-	print(binning)
-	wfall = dedisperse(intensity, dm, freq, dt=dt*binning)
-	print(wfall.shape)
+	wfall = dedisperse(intensity, dm, freq, dt=dt/binning)
+	# print(wfall.shape)
 	# band-averaged time-series
 	ts = np.nanmean(wfall, axis=0)
 
 	# find peak
 	peak_idx = np.nanargmax(ts)
+	print('shifting by', cshift)
+	peak_idx += cshift
+
 	sub = subband(wfall, downsample)
 	print(tres)
 	tleft, tright = 30, 50
@@ -142,6 +155,7 @@ def processBurst(burstwindow, burstkey, p0=[], popt_custom=[], bounds=(-np.inf, 
 	"""
 
 	corr = corrfns.auto_corr2D_viafft(burstwindow)
+
 	if nclip != None or clip != None:
 		corr = np.clip(corr, nclip, clip)
 	#print(burstwindow.shape, corr.shape)
@@ -189,6 +203,10 @@ def processBurst(burstwindow, burstkey, p0=[], popt_custom=[], bounds=(-np.inf, 
 	drifts.append(drift)
 	drift_errors.append(drift_error)
 
+	# find center frequency
+	center_f = findCenter(burstwindow)*freq_res + lowest_freq
+	center_fs.append(center_f)
+
 	#### Plot
 	extents = (0,
 			   time_res*burstwindow.shape[1],
@@ -197,20 +215,22 @@ def processBurst(burstwindow, burstkey, p0=[], popt_custom=[], bounds=(-np.inf, 
 
 	corrextents = (-extents[1], extents[1], -(extents[3]-extents[2])*2, (extents[3]-extents[2])*2)
 
+	nrows = 7
 	if ploti == None:
 		plt.figure(figsize=(15, 5))
 		plt.subplot(121)
 	else:
-		plt.subplot(3, 2, next(ploti))
+		plt.subplot(nrows, 2, next(ploti))
 	plt.title("Burst #{}".format(burstkey))
 	plt.imshow(burstwindow, aspect='auto', cmap=cmap, extent=extents, origin='lower') # white is 0, black is 1
+	if (400 < center_f < 800): plt.axhline(y=center_f)
 	plt.xlabel("Time (ms)")
 	plt.ylabel("Frequency (MHz)")
 
 	if ploti == None:
 		plt.subplot(122)
 	else:
-		plt.subplot(3, 2, next(ploti))
+		plt.subplot(nrows, 2, next(ploti))
 	plt.title("Correlation #{}".format(burstkey))
 	plt.imshow(corr, aspect='auto', cmap='gray', extent=corrextents, origin='lower')
 	plt.clim(0, np.max(corr)/20)
@@ -223,10 +243,10 @@ def processBurst(burstwindow, burstkey, p0=[], popt_custom=[], bounds=(-np.inf, 
 #######################
 
 
-# burstdirs = ['180814', '180911', '180919']
-burstdirs = ['180814', '180917']
+burstdirs = ['180814', '180911', '180919', '180917']
+# burstdirs = ['180917']
 
-datadir='data/CHIME_FRB180814.J0422+73'
+datadir = 'data/CHIME_FRB180814.J0422+73'
 
 cmap = plt.get_cmap('gray_r')
 cmap.set_bad(color = 'w', alpha = 1.)
@@ -234,8 +254,8 @@ cmap.set_bad(color = 'w', alpha = 1.)
 res = {    #(tres, fres)
 	'180814': (0.98304, 400/16384),
 	'180911': (0.98304, 400/16384),
-	# '180917': (1.96608, 400/16384),
-	'180917': (0.98304, 400/16384),
+	'180917': (1.96608, 400/16384),
+	# '180917': (0.98304, 400/16384),
 	'180919': (0.98304, 400/16384),
 }
 
@@ -244,11 +264,14 @@ freq_res = 400/16384*128 # MHz
 lowest_freq = 400.20751953125 # MHZ
 
 dm = 189.4
-# for ddm in tqdm([189 - dm, 189.8 - dm, 190 - dm, 188.9 - dm, 0]):
-for ddm in tqdm([0]):
-	plt.figure(figsize=(10, 15))
+ddms = [189 - dm, 189.8 - dm, 190 - dm, 188.9 - dm, 0]
+for ddm in tqdm(ddms):
+# for ddm in tqdm([ddms[3]]):
+	plt.figure(figsize=(10, 26))
+	# plt.figure()
+
 	ploti = itertools.count(start=1, step=1)
-	popts, perrs, drifts, drift_errors, angles, red_chisqs, keys = [], [], [], [], [], [], []
+	popts, perrs, drifts, drift_errors, angles, red_chisqs, keys, center_fs = [], [], [], [], [], [], [], []
 	parameterfile = '{}/chime_180814_fit_params_dm{}.csv'.format(datadir, dm + ddm)
 	errorfile     = '{}/chime_180814_param_errors_dm{}.csv'.format(datadir, dm + ddm)
 	for burst in burstdirs:
@@ -256,25 +279,64 @@ for ddm in tqdm([0]):
 		time_res = res[burst][0] # ms
 		keys.append(int(burst))
 
-		# find msgpack files for 1 event (easiest to put them all in one directory)
-		burstwindow = loadburstdata(burst, tres=time_res, ddm=ddm, forceFreshLoad=True)
+
 		if burst == '180919': 	# clean up some remaining noise on 180919
+			burstwindow = loadburstdata(burst, tres=time_res, ddm=ddm, forceFreshLoad=False)
 			burstwindow[27:32, ...] = np.nan
 			burstwindow[104:106, ...] = np.nan
+			burstwindow = np.nan_to_num(burstwindow)
+			processBurst(burstwindow, int(burst), ploti=ploti)
+		elif burst == '180917':
+			print("splitting 180917")
+			cshifts = {
+				ddms[0]: 0,
+				ddms[1]: 15,
+				ddms[2]: 15,
+				ddms[3]: 0,
+				ddms[4]: 0,
+			}
 
-		burstwindow = np.nan_to_num(burstwindow)
-		processBurst(burstwindow, int(burst), ploti=ploti)
+			burstwindow = loadburstdata(burst, tres=time_res, ddm=ddm, forceFreshLoad=False, cshift=cshifts[ddm])
+
+			# 23, 36
+			left = 24 #24
+			right = 47 #47
+
+			if ddm == -0.5:
+				print('here')
+				burstwindow[30:35,:] = np.nan
+
+			burstwindow   = np.nan_to_num(burstwindow)
+			burst180917_a = burstwindow[:, :left]
+			burst180917_b = burstwindow[:, left+1:right]
+			burst180917_c = burstwindow[:, right+1:]
+
+			processBurst(burstwindow, int(burst), ploti=ploti)
+
+			processBurst(burst180917_a, int(burst)+0.1, p0=[8.56759328, 24.45301595, 128.36462629, 12.62978021, -3.89371743, 1.68059127], ploti=ploti)
+			processBurst(burst180917_b, int(burst)+0.2, p0=[8.56759328, 24.45301595, 128.36462629, 12.62978021, -3.89371743, 1.68059127], ploti=ploti)
+			processBurst(burst180917_c, int(burst)+0.3, ploti=ploti)
+			for k in [int(burst)+0.1, int(burst)+0.2, int(burst)+0.3]:
+				keys.append(k)
+		else:
+			burstwindow = loadburstdata(burst, tres=time_res, ddm=ddm, forceFreshLoad=False)
+			burstwindow = np.nan_to_num(burstwindow)
+			processBurst(burstwindow, int(burst), ploti=ploti)
 
 	popts = pd.DataFrame(popts, index=keys, columns=['amplitude', 'xo', 'yo', 'sigmax', 'sigmay', 'theta'])
 	perrs = pd.DataFrame(perrs, index=keys, columns=['amp_error', 'xo_error', 'yo_error', 'sigmax_error', 'sigmay_error', 'angle_error'])
 
 	popts['drift (mhz/ms)']       = drifts
 	popts['angle']                = angles
+	popts['center_f']             = center_fs
 	perrs['drift error (mhz/ms)'] = drift_errors
 	perrs['red_chisq']            = red_chisqs
 
 	popts.to_csv(parameterfile, index_label='name')
 	perrs.to_csv(errorfile, index_label='name')
 
-	plt.savefig("FRB180814_ddm_{}.png".format(ddm))
+	plt.tight_layout()
+	plt.savefig("FRB180814_ddm_{}.png".format(round(ddm, 1)))
 	# plt.show()
+
+

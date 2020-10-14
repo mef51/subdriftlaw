@@ -8,6 +8,7 @@
 \geometry{verbose,tmargin=2.54cm,bmargin=2.54cm}
 \setcounter{secnumdepth}{4}
 \usepackage{amsmath}
+\usepackage{graphicx}
 \usepackage[numbers]{natbib}
 
 \makeatletter
@@ -27,7 +28,7 @@
 \author{Mohammed Chamma}
 \maketitle
 
-\subsection*{Materials and Methods}
+\section*{Materials and Methods}
 
 This section will describe the process of deriving measurements of
 the sub-burst drift rate and the burst duration from dynamic spectra
@@ -57,7 +58,7 @@ the effect of small variations of this DM, as discussed later. Data
 for FRB180814.J0422+74 is provided at its original resolution and
 without dedispersion. The range of DMs used for this source in \cite{CHIME2019a}
 vary between 188.9-190 pc/cm$^{3}$. We find that a good fit between
-this data and our model exists for DMs in between 188.9-190 pc/cm$^{3}$.
+this data and our model exists for DMs in between 188.9-189.4 pc/cm$^{3}$.
 However we will tentatively argue that the shape of the FRB180814.J0422+7
 bursts suggests too aggressive of a dedispersion and that a slightly
 lower DM of 188.7-188.8 pc/cm$^{3}$ is optimal in terms of the burst
@@ -84,12 +85,12 @@ and complexity that require justification. For example, a model that
 selects DMs based on maximizing structure \cite{Gajjar2018,Hessels2019}
 as a selection criteria brings with it assumptions that components
 of the burst are emitted (and arrive) simultaneously across a large
-frequency range. While this criteria advantageously gives a narrow
-range of DMs to choose from, there is no reason to strictly adhere
-to it from burst to burst. Therefore, in general, we limit ourselves
-to the range of DMs found from all the bursts as a whole when considering
-variations, and for the analysis proper we select a single DM for
-every burst from a particular source.
+frequency range \cite{Hessels2019}. While this criteria advantageously
+gives a narrow range of DMs to choose from, there is no reason to
+strictly adhere to it from burst to burst. Therefore, in general,
+we limit ourselves to the range of DMs found from all the bursts as
+a whole when considering variations, and for the analysis proper we
+select a single DM for every burst from a particular source.
 
 The general pipeline that every burst is put through is written in
 Python and consists of computing the autocorrelation of the signal,
@@ -143,7 +144,7 @@ in our preferred range but this often results in no solution being
 found. With $\theta$, the sub-burst drift rate of the burst is calculated
 via
 \begin{equation}
-\frac{d\nu_{\mathrm{obs}}}{dt_{D}}=\frac{\nu_{\mathrm{res}}}{t_{\mathrm{res}}}\tan\theta,
+\frac{d\nu_{\mathrm{obs}}}{dt_{D}}=\frac{\nu_{\mathrm{res}}}{t_{\mathrm{res}}}\tan\theta,\label{eq:drifttheta}
 \end{equation}
 where $\nu_{\mathrm{res}}$ and $t_{\mathrm{res}}$ are the frequency
 and time resolutions of the dynamic spectrum. The burst duration measured
@@ -171,12 +172,64 @@ $\nu_{\mathrm{obs}}$ of each burst via an intensity-weighted average
 of the time-averaged frequency series. We used the \texttt{scipy.odr.RealData
 }package, which uses orthogonal distance regression and incorporates
 the errors on the data to find a fit. This fit differs slightly between
-sources, and a single fit that includes all sources can be found
+sources, and a single fit that includes all sources can be found.
+
+============================ \textasciicircum{} edited on overleaf
 
 \textbf{TODO:}
 
 \textbf{How do you test its robustness with DM variations?}
 
+Since a variation in the DM used to de-disperse a burst will translate
+to a variation in its fit angle $\theta$ and thus a variation in
+the measured sub-burst drift rate, we varied the DM used to test the
+robustness of the relationship found between the sub-burst drift rate
+and burst duration. We found that a variation in the DM acts as a
+rotation of the fit angle $\theta$, which shifts the final fit found
+but preserves the aforementioned relationship. Using the bursts from
+FRB\textasciitilde 180916, we repeated the autocorrelation analysis
+described above while varying the original DM of 348.82 pc/cm$^{3}$
+with steps of $\Delta\mathrm{DM}=$0.5, -1, and -2 pc/cm$^{3}$, which
+is within the range of DMs found by \cite{Amiri2020periodic} for
+this source. Values of $\Delta\mathrm{DM}$ larger than 0.5 pc/cm$^{3}$
+yielded positive sub-burst drift rates which indicates over-de-dispersion.
+Figure \ref{fig:Angle-at-different} shows the fit angles $\theta$
+and durations $t_{\mathrm{w}}$ found for the collection of bursts
+used from FRB\textasciitilde 180916 dedispersed to the different
+DM values. Using eq. (\ref{eq:drifttheta}), the angle is related
+to the burst duration through
+\begin{equation}
+\theta=\arctan(t_{\mathrm{w}}/A),
+\end{equation}
+where $A$ is a constant and $\theta$ is transformed to fit in the
+range of $\arctan(x)$. Using the fit found with the above form for
+the bursts at $\Delta\mathrm{DM}=0$, we find angles that offset this
+fit to satisfactorily fit the bursts at each of the other DM values.
+We also note that the subburst durations found largely stay the same
+under different DMs. This result indicates that even though the sub-burst
+drift rate is quite sensitive to the DM chosen, the relative differences
+of the drifts between a cohort of bursts is consistent and indeed
+that the overall inverse trend between the sub-burst drift rate and
+burst duration exists even at different choices of DM.
+
+\begin{figure}
+\begin{centering}
+\includegraphics[width=1\textwidth]{B:/dev/sadtrombone/universal/angleatdifferentDMs}
+\par\end{centering}
+\caption{\label{fig:Angle-at-different}Robustness test: the fit angle $\theta$
+vs. sub-burst duration $t_{\mathrm{w}}$ from bursts dedispersed to
+small variations in the DM for the source FRB\textasciitilde 180916.
+Red points are bursts at $\Delta\mathrm{DM}=0$ which corresponds
+to a DM of 348.82 pc/cm$^{3}$. Blue, cyan, and green points are bursts
+de-dispersed to $\Delta\mathrm{DM}=0.5,$-1, and -2 pc/cm$^{3}$,
+respectively. The red line is fit to the red points and is of the
+form $\arctan(t_{\mathrm{w}}/A)$ derived from the dynamical model
+described in the main text. Blue, cyan, and green lines are fits found
+by adding a rotation (adding an angle) to the $\Delta\mathrm{DM}=0$
+model. This plot demonstrates the rotational effect small variations
+in the DM has on dynamic spectra of FRBs.}
+
+\end{figure}
 \textbf{How do you optimize DM based on the previous test?}
 
 \textbf{Stampcard}

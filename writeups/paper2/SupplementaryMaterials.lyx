@@ -404,7 +404,7 @@ package, which performs a non-linear least squares to find a fit.
 , the sub-burst drift rate of the burst is calculated via 
 \begin_inset Formula 
 \begin{equation}
-\frac{d\nu_{\mathrm{obs}}}{dt_{D}}=\frac{\nu_{\mathrm{res}}}{t_{\mathrm{res}}}\tan\theta,
+\frac{d\nu_{\mathrm{obs}}}{dt_{D}}=\frac{\nu_{\mathrm{res}}}{t_{\mathrm{res}}}\tan\theta,\label{eq:drifttheta}
 \end{equation}
 
 \end_inset
@@ -512,7 +512,11 @@ scipy.odr.RealData
 package, which uses orthogonal distance regression and incorporates the
  errors on the data to find a fit.
  This fit differs slightly between sources, and a single fit that includes
- all sources can be found 
+ all sources can be found.
+\end_layout
+
+\begin_layout Standard
+============================ ^ edited on overleaf
 \end_layout
 
 \begin_layout Standard
@@ -525,6 +529,204 @@ TODO:
 
 \series bold
 How do you test its robustness with DM variations?
+\end_layout
+
+\begin_layout Standard
+Since a variation in the DM used to de-disperse a burst will translate to
+ a variation in its fit angle 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and thus a variation in the measured sub-burst drift rate, we varied the
+ DM used to test the robustness of the relationship found between the sub-burst
+ drift rate and burst duration.
+ We found that a variation in the DM acts as a rotation of the fit angle
+ 
+\begin_inset Formula $\theta$
+\end_inset
+
+, which shifts the final fit found but preserves the aforementioned relationship.
+ Using the bursts from FRB~180916, we repeated the autocorrelation analysis
+ described above while varying the original DM of 348.82 pc/cm
+\begin_inset Formula $^{3}$
+\end_inset
+
+ with steps of 
+\begin_inset Formula $\Delta\mathrm{DM}=$
+\end_inset
+
+0.5, -1, and -2 pc/cm
+\begin_inset Formula $^{3}$
+\end_inset
+
+, which is within the range of DMs found by 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Amiri2020periodic"
+literal "false"
+
+\end_inset
+
+ for this source.
+ Values of 
+\begin_inset Formula $\Delta\mathrm{DM}$
+\end_inset
+
+ larger than 0.5 pc/cm
+\begin_inset Formula $^{3}$
+\end_inset
+
+ yielded positive sub-burst drift rates which indicates over-de-dispersion.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Angle-at-different"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows the fit angles 
+\begin_inset Formula $\theta$
+\end_inset
+
+ and durations 
+\begin_inset Formula $t_{\mathrm{w}}$
+\end_inset
+
+ found for the collection of bursts used from FRB~180916 dedispersed to
+ the different DM values.
+ Using eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:drifttheta"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), the angle is related to the burst duration through 
+\begin_inset Formula 
+\begin{equation}
+\theta=\arctan(t_{\mathrm{w}}/A),
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $A$
+\end_inset
+
+ is a constant and 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is transformed to fit in the range of 
+\begin_inset Formula $\arctan(x)$
+\end_inset
+
+.
+ Using the fit found with the above form for the bursts at 
+\begin_inset Formula $\Delta\mathrm{DM}=0$
+\end_inset
+
+, we find angles that offset this fit to satisfactorily fit the bursts at
+ each of the other DM values.
+ We also note that the subburst durations found largely stay the same under
+ different DMs.
+ This result indicates that even though the sub-burst drift rate is quite
+ sensitive to the DM chosen, the relative differences of the drifts between
+ a cohort of bursts is consistent and indeed that the overall inverse trend
+ between the sub-burst drift rate and burst duration exists even at different
+ choices of DM.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename B:/dev/sadtrombone/universal/angleatdifferentDMs.eps
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Angle-at-different"
+
+\end_inset
+
+Robustness test: the fit angle 
+\begin_inset Formula $\theta$
+\end_inset
+
+ vs.
+ sub-burst duration 
+\begin_inset Formula $t_{\mathrm{w}}$
+\end_inset
+
+ from bursts dedispersed to small variations in the DM for the source FRB~180916.
+ Red points are bursts at 
+\begin_inset Formula $\Delta\mathrm{DM}=0$
+\end_inset
+
+ which corresponds to a DM of 348.82 pc/cm
+\begin_inset Formula $^{3}$
+\end_inset
+
+.
+ Blue, cyan, and green points are bursts de-dispersed to 
+\begin_inset Formula $\Delta\mathrm{DM}=0.5,$
+\end_inset
+
+-1, and -2 pc/cm
+\begin_inset Formula $^{3}$
+\end_inset
+
+, respectively.
+ The red line is fit to the red points and is of the form 
+\begin_inset Formula $\arctan(t_{\mathrm{w}}/A)$
+\end_inset
+
+ derived from the dynamical model described in the main text.
+ Blue, cyan, and green lines are fits found by adding a rotation (adding
+ an angle) to the 
+\begin_inset Formula $\Delta\mathrm{DM}=0$
+\end_inset
+
+ model.
+ This plot demonstrates the rotational effect small variations in the DM
+ has on dynamic spectra of FRBs.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

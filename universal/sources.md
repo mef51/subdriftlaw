@@ -361,3 +361,26 @@ oct 5
 * redid the analysis for FRB180916 with corrected dedispersion. No major change. Fit improved slightly. DM variations still act as a rotation of the autocorrelation.
     * notably center_f didn't change results much either
 
+oct 7
+===
+* split up 180917 and found fits. need to center the view for trial DMs
+    * i think CHIME made a mistake dedispersing 180917 but we'll see how the points fall.
+
+oct 12 - oct 16
+===
+* paper todos:
+    * stampcards
+    * describe trial dm plot (for FRB180916)
+    * understand trial dm plot for FRB180914, and add fits to those plots
+    * describe burst exclusions
+    * edit
+* more todos:
+    * you should scale sigma by root(red_chisq) not red_chisq: https://en.wikipedia.org/wiki/Weighted_arithmetic_mean#Correcting_for_over-_or_under-dispersion
+    * martin's plot
+
+oct 13/14
+===
+* center_f wasn't being read into the shared law plot, fixed it. Fit is better now. the more i fix the better the sources match
+* added paragraph about trial dms to paper
+* made martin's plot for drift vs nu_obs
+* still have some todos from the above list
