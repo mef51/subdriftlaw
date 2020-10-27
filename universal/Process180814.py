@@ -8,13 +8,9 @@ from tqdm import tqdm
 import pandas as pd
 
 def findCenter(burstwindow):
-	#freqspectrum = np.nanmean(burstwindow, axis=1)
-	# To be honest I wrote this with pandas a long time ago and I'm not sure why but it works
-	freqspectrum = pd.DataFrame(burstwindow.sum(axis=1)[:, None])
-	data = freqspectrum[:][0]
-	x = data.keys()
-	xo = sum(x*data)/sum(data)
-	return xo # return the central frequency
+	freqspectrum = burstwindow.sum(axis=1)[:, None]
+	freqi = np.indices(freqspectrum.shape)[0]
+	return np.nansum(freqi*freqspectrum) / np.nansum(freqspectrum)
 
 def dedisperse(wfall, dm, freq, dt):
 	"""Dedisperse a dynamic spectrum.
@@ -56,7 +52,6 @@ def subband(wfall, nsub):
 	nchan, nsamp = wfall.shape
 	sub_factor = nchan // nsub
 	return np.nanmean(wfall.reshape(-1, sub_factor, nsamp), axis=1)
-
 
 def read_static_mask(static_mask):
 	bad_chans = []
@@ -204,7 +199,11 @@ def processBurst(burstwindow, burstkey, p0=[], popt_custom=[], bounds=(-np.inf, 
 	drift_errors.append(drift_error)
 
 	# find center frequency
-	center_f = findCenter(burstwindow)*freq_res + lowest_freq
+	if burst == '180814':
+		print("YOO")
+		center_f = findCenter(burstwindow[0:50])*freq_res + lowest_freq
+	else:
+		center_f = findCenter(burstwindow)*freq_res + lowest_freq
 	center_fs.append(center_f)
 
 	#### Plot
@@ -221,9 +220,9 @@ def processBurst(burstwindow, burstkey, p0=[], popt_custom=[], bounds=(-np.inf, 
 		plt.subplot(121)
 	else:
 		plt.subplot(nrows, 2, next(ploti))
-	plt.title("Burst #{}".format(burstkey))
+	plt.title("Burst #{}".format(burstkey), fontsize=fontsize)
 	plt.imshow(burstwindow, aspect='auto', cmap=cmap, extent=extents, origin='lower') # white is 0, black is 1
-	if (400 < center_f < 800): plt.axhline(y=center_f)
+	if (400 < center_f < 800): plt.axhline(y=center_f, c='k', ls='--', lw=3)
 	plt.xlabel("Time (ms)")
 	plt.ylabel("Frequency (MHz)")
 
@@ -231,8 +230,10 @@ def processBurst(burstwindow, burstkey, p0=[], popt_custom=[], bounds=(-np.inf, 
 		plt.subplot(122)
 	else:
 		plt.subplot(nrows, 2, next(ploti))
-	plt.title("Correlation #{}".format(burstkey))
+	plt.title("Correlation #{}".format(burstkey), fontsize=fontsize)
 	plt.imshow(corr, aspect='auto', cmap='gray', extent=corrextents, origin='lower')
+	plt.xlabel("Time Shift (ms)")
+	plt.ylabel("Frequency Shift (MHz)")
 	plt.clim(0, np.max(corr)/20)
 
 	if popt[0] > 0:
@@ -244,7 +245,8 @@ def processBurst(burstwindow, burstkey, p0=[], popt_custom=[], bounds=(-np.inf, 
 
 
 burstdirs = ['180814', '180911', '180919', '180917']
-# burstdirs = ['180917']
+# burstdirs = ['180814', '180911', '180919'] # p1
+# burstdirs = ['180917']                       # p2
 
 datadir = 'data/CHIME_FRB180814.J0422+73'
 
@@ -265,10 +267,15 @@ lowest_freq = 400.20751953125 # MHZ
 
 dm = 189.4
 ddms = [189 - dm, 189.8 - dm, 190 - dm, 188.9 - dm, 0]
+ddms = [188.8 - dm, 188.7 - dm]
+ddms = [188.7 - dm]
+ddms = [188.9 - dm]
 for ddm in tqdm(ddms):
 # for ddm in tqdm([ddms[3]]):
-	plt.figure(figsize=(10, 26))
-	# plt.figure()
+	# plt.figure(figsize=(10, 26))
+	plt.figure(figsize=(8.5*2, 11*2+3))
+	fontsize = 22
+	plt.rcParams.update({'font.size': fontsize})
 
 	ploti = itertools.count(start=1, step=1)
 	popts, perrs, drifts, drift_errors, angles, red_chisqs, keys, center_fs = [], [], [], [], [], [], [], []
@@ -281,7 +288,11 @@ for ddm in tqdm(ddms):
 
 
 		if burst == '180919': 	# clean up some remaining noise on 180919
-			burstwindow = loadburstdata(burst, tres=time_res, ddm=ddm, forceFreshLoad=False)
+			if ddm == 188.7 - 0:
+				cshift = 10
+			else:
+				cshift = 0
+			burstwindow = loadburstdata(burst, tres=time_res, ddm=ddm, forceFreshLoad=False, cshift=cshift)
 			burstwindow[27:32, ...] = np.nan
 			burstwindow[104:106, ...] = np.nan
 			burstwindow = np.nan_to_num(burstwindow)
@@ -289,11 +300,13 @@ for ddm in tqdm(ddms):
 		elif burst == '180917':
 			print("splitting 180917")
 			cshifts = {
-				ddms[0]: 0,
-				ddms[1]: 15,
-				ddms[2]: 15,
-				ddms[3]: 0,
-				ddms[4]: 0,
+				189 - dm   : 0,
+				189.8 - dm : 15,
+				190 - dm   : 15,
+				188.9 - dm : 0,
+				0          : 0,
+				188.8 - dm : 0,
+				188.7 - dm : 0,
 			}
 
 			burstwindow = loadburstdata(burst, tres=time_res, ddm=ddm, forceFreshLoad=False, cshift=cshifts[ddm])

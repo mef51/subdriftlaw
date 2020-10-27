@@ -384,3 +384,44 @@ oct 13/14
 * added paragraph about trial dms to paper
 * made martin's plot for drift vs nu_obs
 * still have some todos from the above list
+
+oct 14
+===
+* more more todos:
+    * simplify text with diagram of ellipse defining the terms
+    * consider equal axes for stampcard
+    * write the dm selection stuff, esp for FRB180814
+    * error bars on angle
+* 180917 bursts have chisq << 1, which is supposed to indicate overfitting?
+
+oct 22-23
+===
+* submission todos:
+    * angle error bars    : done
+    * stampcard           :
+    * fix chisq error bar : done
+    * burst exclusion     : done
+    * drift vs frequency  :
+    * maybe simplification diagram?
+* reasons for exclusion:
+    * burst smearing
+    * low snr
+    * top of band/bottom of band
+    * noise distorts shape
+* stampcard
+    * 1. 121102 (23x2)
+        * does this even exist
+    * 2. 180916 (16x2)
+        * some of the centers are fucked
+    * 3. 180814 (6x2)
+
+oct 26
+===
+* nuobs matters on angle vs duration plot, for after submission
+* gajjar center f
+* "Correlation 15" use 15A
+* contour color
+* replot fig 1 after center_fs
+* fig 1 parameter uncertainties
+
+* submitted.
