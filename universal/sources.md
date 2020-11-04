@@ -425,3 +425,7 @@ oct 26
 * fig 1 parameter uncertainties
 
 * submitted.
+
+oct 29
+===
+* verify error bars and error equations
