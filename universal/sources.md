@@ -429,3 +429,7 @@ oct 26
 oct 29
 ===
 * verify error bars and error equations
+
+nov 17
+===
+* the equation on tw was correct, the error equation had an error. they are now so small they are invisible
