@@ -7,10 +7,30 @@ def findCenter(burstwindow):
 	freqi = np.indices(freqspectrum.shape)[0]
 	return np.nansum(freqi*freqspectrum) / np.nansum(freqspectrum)
 
+def structure_parameter(wfall, dt, tstart, tend):
+	"""
+	wip. see eq. 1 in gajjar et al. 2018
+	dt     - time resolution
+	tstart - chan #
+	tend   - chan #
+	"""
+	n = (tend - tstart)
+	ts = np.nanmean(wfall, axis=0)
+	struct = 0
+	for i in enumerate(ts[tstart:tend]):
+		struct += abs((ts[i] - ts[i+1]) / dt)
+
+	return struct/n
+
 def subband(wfall, nsub):
 	nchan, nsamp = wfall.shape
 	sub_factor = nchan // nsub
 	return np.nanmean(wfall.reshape(-1, sub_factor, nsamp), axis=1)
+
+def subsample(m, nfreq, ntime):
+	""" m : 2x2 array """
+	n = np.nanmean(m.reshape(-1, m.shape[0]//nfreq, m.shape[1]), axis=1)
+	return np.nanmean(n.reshape(n.shape[0], -1, n.shape[1]//ntime), axis=2)
 
 def moments(data):
 	"""Returns (height, x, y, width_x, width_y)

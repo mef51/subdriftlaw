@@ -433,3 +433,10 @@ oct 29
 nov 17
 ===
 * the equation on tw was correct, the error equation had an error. they are now so small they are invisible
+
+jan 13
+===
+* start work on ref response
+* ProcessBursts.ipynb (frb121102) is unwieldy and should probably be re-written..
+* S/N optimized DM gives the wrong DM, since it stacks components to increase the SNR. Structure optimized DM is the only valid measure of DM for complex bursts.
+* generated differently dispersed data for the michilli 121102 bursts
