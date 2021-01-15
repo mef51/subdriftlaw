@@ -440,3 +440,11 @@ jan 13
 * ProcessBursts.ipynb (frb121102) is unwieldy and should probably be re-written..
 * S/N optimized DM gives the wrong DM, since it stacks components to increase the SNR. Structure optimized DM is the only valid measure of DM for complex bursts.
 * generated differently dispersed data for the michilli 121102 bursts
+
+jan 14
+===
+* there's a lot of moving parts so let me summarize the ref response with a single sentence:
+    * "How have you studied the fact that the measurements of drift and burst duration, and thus the relationship between them, depends on the choice of DM and the way bursts are split?"
+        * DM choices can be made in terms of individual bursts or in terms of the source
+        * For individual bursts, DM can be chosen by maximizing S/N, or by maximizing the structure     parameter. Not all bursts have enough S/N or components to by dedispersed by structure. The DM found by S/N varies significantly (is always greater?) than the structure-optimized DM for bursts with multi-components.
+        * From the individually found DMs, one can make choices about the DM by considering the time dependance of the DM for the source, the statistical variation of the DMs found (e.g. take an average DM), and/or on which basis the DM was found.
