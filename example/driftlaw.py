@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import scipy.odr
 
 def computeModelDetails(frame):
+	""" Takes a dataframe and computes columns related to the dynamical frb model """
+
 	tauwerror_expr = lambda r: 1e3*r['time_res']*np.sqrt(r['max_sigma']**6*r['min_sigma_error']**2*np.cos(r['angle']-np.pi/2)**4 + r['angle_error']**2*r['max_sigma']**2*r['min_sigma']**2*(-r['max_sigma']**2 + r['min_sigma']**2)**2*np.cos(r['angle']-np.pi/2)**2*np.sin(r['angle']-np.pi/2)**2 + r['max_sigma_error']**2*r['min_sigma']**6*np.sin(r['angle']-np.pi/2)**4)/(r['max_sigma']**2*np.cos(r['angle']-np.pi/2)**2 + r['min_sigma']**2*np.sin(r['angle']-np.pi/2)**2)**1.5
 
 	frame['drift_abs'] = -1*(frame['drift (mhz/ms)'])
@@ -31,8 +33,9 @@ def computeModelDetails(frame):
 	frame['tau_w_ms'] = frame['tau_w']*1e3
 
 	## Redshift corrections
-	frame['drift_z'] = frame[['drift_over_nuobs', 'z']].apply(lambda row: row['drift_over_nuobs']*(1+row['z']), axis=1)
-	frame['tau_w_ms_z'] = frame[['tau_w_ms', 'z']].apply(lambda row: row['tau_w_ms']/(1+row['z']), axis=1)
+	if 'z' in frame.index:
+		frame['drift_z'] = frame[['drift_over_nuobs', 'z']].apply(lambda row: row['drift_over_nuobs']*(1+row['z']), axis=1)
+		frame['tau_w_ms_z'] = frame[['tau_w_ms', 'z']].apply(lambda row: row['tau_w_ms']/(1+row['z']), axis=1)
 
 	return frame
 

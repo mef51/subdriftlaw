@@ -7,7 +7,7 @@ def findCenter(burstwindow):
 	freqi = np.indices(freqspectrum.shape)[0]
 	return np.nansum(freqi*freqspectrum) / np.nansum(freqspectrum)
 
-def structure_parameter(wfall, dt, tstart, tend):
+def structureParameter(wfall, dt, tstart, tend):
 	"""
 	wip. see eq. 1 in gajjar et al. 2018
 	dt     - time resolution
