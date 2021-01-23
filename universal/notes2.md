@@ -391,3 +391,13 @@ $$
 * compute the min and max drift per burst using the range of DMs
 
 ## jan 22
+* annotate series with a list of indices that correspond to the frames list
+* exclude errant points on the user side, at least for obvious issues like positive drift.
+    * exclude other points (like points that represent multiple bursts before splitting) with an exclusions array and df.drop()
+    * reason for excluding points:
+        * positive drift, we assume they are non-physical and an artifact of over dedispersion
+        * infinite drift/ie. huge error bars. burst is too vertical. this the same class exclusion for positive drifts: unphysical
+            * exclude with a filter on the drift error. too large error means you're out. this clearly indicates a poor measurement
+* use `%matplotlib qt` to get the interactive window and explore errant points directly.
+* the frb121102 data has angle problems
+    * it didn't have the absolute value when comparing sigmax and sigmay. consolidating library code will eventually fix these bugs
