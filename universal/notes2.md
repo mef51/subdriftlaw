@@ -401,3 +401,37 @@ $$
 * use `%matplotlib qt` to get the interactive window and explore errant points directly.
 * the frb121102 data has angle problems
     * it didn't have the absolute value when comparing sigmax and sigmay. consolidating library code will eventually fix these bugs
+* even though 1/drift allows you to eliminate infinity, those measurements of drift that are close to vertical will still have huge error
+    * the measurement of drift angle is superior to drift in every way, especially in the context of DM variations
+        * the measurement of drift angle and its error varies uniformly as you vary the DM... but drift never will
+        * however if we believe positive drifts to be unphysical then we have to exclude angles at and close to pi/2. In this case the size of the drift error can be used as a filter by requiring a certain standard of it.
+* if you exclude a point because its drift has a huge error at a certain DM, you should exclude it from all other DM trials as well.
+    * A huge drift error at a trial DM in a range of DMs means the drift for that burst is unconstrained, and meaningless, in that entire range of DMs.
+
+## jan 26
+* todo:
+    * frb121102 variation data is off compared to fig 1, some most dms are not being plotted? >> center_f was in ghz instead of mhz
+    * compute error range from dm >> see driftranges() function. need to integrate it with the rest of the library
+    * percent error exclusion logic
+
+## feb 1
+* The t_w error bars on the data is different slightly. Run the old notebook and ensure they're consistent.
+    >> the figure in the arxiv submission is wrong, we fixed its t_w error bars in the nov 17 and dec 7 commits
+* duration appears to be wildly unconstrained across the dm range
+    >> the ranges I computed are physical values, not errors. So I can't just pass them as errors
+* shaded region plotting: https://stackoverflow.com/questions/12957582/plot-yerr-xerr-as-shaded-region-rather-than-error-bars
+* The ranges we computed are not stastical errors, so why are you using them?
+    * The DMs quoted for each burst have a distribution, however this distribution does not capture the range of DMs for all the bursts taken together. So we can't use something like Ziggy's dfdt to measure the drift covariance because the quoted DM errors do not take into account the DMs distribution for the whole source. That is, the actual distribution of possible DMs is much larger than any of the DM errors found on an individual burst. We could try to characterise the distribution of DMs by looking at all of a source's bursts, but you would still need to exclude bursts based on non-physical drifts. So it's simpler and more conservative to just compute a range of drifts given a range of DMs and accept all reasonable drifts as "possible", even if some of those measurements are unlikely given an underlying DM distribution (which is unknown). This means that our range will in fact be larger than true error bars on the drift measurements. We can do this because we don't actually really care what the actual linear drift rate is, we just need to understand its trend relative to other bursts from the same source. So even though we cannot measure the linear drift rates precisely, we can still learn about the relationship between them, so long as we are careful to exclude unconstrained linear drift rates (drift rates that go to infinity).
+* The underlying time precision on 180916's bursts is not very good so those points have large ranges.
+* Now that the plotting pipe is working, I need to study what DM ranges are appropriate, and fit our model given the new ranges.
+
+## feb 2
+* see aug 14 note for DM ranges. im fine with what we have for now
+* I don't think its a good idea to fit in a log-log space. Do it in linear.
+    >> looks like a worse fit on log scale, errors are still unreasonably small
+* I don't get the errors on ODR. Fit on every DM frame and make a range of fit parameters just like you made a range of drifts.
+    >> done. looks good. But did not characterize which were good fits. Which I guess doesn't matter, since it would make the region narrower if I did.
+* make sure you label all error bars and shaded regions clearly since I'm not using them in the standard way
+* wait can i just take the list of A parameters and naively compute its standard deviation? is that dumb?
+* see what happens if you exclude by burst id and not just by value. That is, if one burst is bad at a certain dm, drop that burst at all dms
+* add the gajjar and chime 121102 bursts
