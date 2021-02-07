@@ -435,3 +435,10 @@ $$
 * wait can i just take the list of A parameters and naively compute its standard deviation? is that dumb?
 * see what happens if you exclude by burst id and not just by value. That is, if one burst is bad at a certain dm, drop that burst at all dms
 * add the gajjar and chime 121102 bursts
+
+## feb 4
+* refactoring the Gajjar bursts
+    * automated burst separation is possible via a derivative of the time series, but to be honest at trial DMs there's no guarantee that they aren't on top of each other. So it's best to separate them at a single DM, pad them with  background noise, and then dedisperse them to different DMs.
+    * Actually the structure limits the DM possible for these bursts. Any DM where they are overlapping should be excluded. So maybe instead use the time series to count the number of distinct bursts and if it isn't what's expected (4 in the case of 11A) then rule out that DM. Hmm...
+    * This means that pulse trains can be used to greatly constrain the possible DM, more so than multiple individual bursts. With a tightly constrained DM from pulse trains from multiple sources, you can tightly constrain the relationship between the sources. A version of the drift vs duration plot that ONLY has pulse trains on it should be very informative.
+* omg that x/y vs y/x fitmap bug is back NOOOOOOOOO
