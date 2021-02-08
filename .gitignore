@@ -21,3 +21,6 @@ DM_phase.py
 *~
 sigproc.pdf
 *.swp
+node_modules/
+geckodriver.log
+package-lock.json
