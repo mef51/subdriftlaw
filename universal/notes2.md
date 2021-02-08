@@ -442,3 +442,8 @@ $$
     * Actually the structure limits the DM possible for these bursts. Any DM where they are overlapping should be excluded. So maybe instead use the time series to count the number of distinct bursts and if it isn't what's expected (4 in the case of 11A) then rule out that DM. Hmm...
     * This means that pulse trains can be used to greatly constrain the possible DM, more so than multiple individual bursts. With a tightly constrained DM from pulse trains from multiple sources, you can tightly constrain the relationship between the sources. A version of the drift vs duration plot that ONLY has pulse trains on it should be very informative.
 * omg that x/y vs y/x fitmap bug is back NOOOOOOOOO
+
+## feb 7
+* the gajjar spectra have many more frequency channels than time channels. fit results improve when you subband the frequency channels
+    * could just be due to the increased snr
+* i think the x/y bug was really just a difficulty fitting bug. feeding curve_fit with better initial guesses makes good fits.
