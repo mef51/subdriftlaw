@@ -447,3 +447,9 @@ $$
 * the gajjar spectra have many more frequency channels than time channels. fit results improve when you subband the frequency channels
     * could just be due to the increased snr
 * i think the x/y bug was really just a difficulty fitting bug. feeding curve_fit with better initial guesses makes good fits.
+
+## feb 8
+* gajjar 11a bursts are on figure 1, conclusions remain the same (that is, they fit the range of trends)
+    * I should remember to describe that I padded each subburst with a background samples in order to have room to dedisperse them
+    * the duration error due to dm variations on these bursts are smaller than the fitting algorithm's errors, though I'm not yet sure if the padding affected that error.
+* We don't measure the FRB121102 CHIME burst, we just use their measurement of its drift. Note that in the new figure caption
