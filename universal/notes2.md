@@ -453,3 +453,8 @@ $$
     * I should remember to describe that I padded each subburst with a background samples in order to have room to dedisperse them
     * the duration error due to dm variations on these bursts are smaller than the fitting algorithm's errors, though I'm not yet sure if the padding affected that error.
 * We don't measure the FRB121102 CHIME burst, we just use their measurement of its drift. Note that in the new figure caption
+
+## feb 12
+* the DM ranges I chose previously for all three sources (see Aug 14) are all good.
+    * DMs outside the range I initially chose for 180916 make the bursts obviously distorted. But I did a run at 349.82pc/cm3 which is on the higher end (but not the max) of DMs they found (see their extended table 1)
+    * DMs for 180814 are already within the range of structure optimized DMs reported by CHIME. We don't use the SNR DMs because they distort the bursts, just like in Gajjar burst 11A
