@@ -458,3 +458,41 @@ $$
 * the DM ranges I chose previously for all three sources (see Aug 14) are all good.
     * DMs outside the range I initially chose for 180916 make the bursts obviously distorted. But I did a run at 349.82pc/cm3 which is on the higher end (but not the max) of DMs they found (see their extended table 1)
     * DMs for 180814 are already within the range of structure optimized DMs reported by CHIME. We don't use the SNR DMs because they distort the bursts, just like in Gajjar burst 11A
+
+## feb 15
+* merged the SM with the main text (formatting wise)
+* fixed that weird citation mixup between the 180916 paper and chawla et al 2020
+* use \hl and \st from the soul package to show highlight and strikethrough edits
+* i want to add two panels to the angle vs duration plot to cover all the sources. the data already exists in the dmvars spreadsheets
+* having green and red is not a good colour choice
+* use \texofpdfstring to \hl section titles https://tex.stackexchange.com/questions/240437/cross-out-the-text-in-the-section-title/240438#240438
+* oops: why don't we just dedisperse each burst to its canonical DM
+    >> its complicated and the 'canonical' dm is ambiguous anyway (S/N vs structure DM)
+    >> simpler to just yolo dms and see what you get
+
+## feb 16
+* paper work
+
+## feb 17
+* i should dig a little deeper into how the low-level DM search algorithms work
+
+## feb 18
+* add an exclusion for no fit found
+* add exclusion diagnostic logs
+* frb121102 michilli
+    * bursts 3, 5, 6, 14 are distorted at high DM and require a more limited DM range, i will mark them with an asterisk
+* frb121102 gajjar
+    * no exclusions
+* frb180916
+    * 15.5 16 23 24 29 31 32 33 need a more limited dm
+        * 23 is clearly distorted at high dm
+        * 16 has huge error cuz its a vertical circle
+* frb180814
+    * 180919 is bad
+    * 180911 has large error at the highest DM so needs to be limited
+* We limit the DM range for the specially marked bursts due to positive or infinite drift rate at high DM
+* Some points are excluded because no fit was found. This can happen for bursts whose autocorrelations are circular, making an elliptical fit ambiguous
+* Asterisked points are included in fitting if their measurement passes the filter at that DM
+
+## feb 23
+* TODO: fix shaded region colors to match source colors
