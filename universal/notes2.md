@@ -495,4 +495,12 @@ $$
 * Asterisked points are included in fitting if their measurement passes the filter at that DM
 
 ## feb 23
-* TODO: fix shaded region colors to match source colors
+* TODO: fix shaded region colors to match source colors, find a better way to mark limited points (color error bars? dash them?)
+
+## feb 24
+* forgot to add michilli bursts 9 and 10 OOPS. these are each two component bursts
+* see handbook of pulsar astronomy (lorimer/kramer) for details about coherent vs incoherent dedispersion
+* mark dm limited points with circles
+* fit when combining michilli and gajjar data is 0.085 +- 0.006 / t_w
+* should i use the min error or the max error when finding fits?
+* paper needs a proper conclusion section
