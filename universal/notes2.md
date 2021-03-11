@@ -503,4 +503,27 @@ $$
 * mark dm limited points with circles
 * fit when combining michilli and gajjar data is 0.085 +- 0.006 / t_w
 * should i use the min error or the max error when finding fits?
+    >> little difference
 * paper needs a proper conclusion section
+
+## feb 25
+* added hatches to shaded regions
+    >> nevermind its bugged
+    >> adobe acrobat+matplotlib have a bug where they don't display transparent edges properly. but pdflatex seems to be able to render it sometimes
+* fit ranges:
+    >> FRB121102 Michilli et al. (2018) (0.051 - 0.211) $t_w^{-1}$
+    >> FRB121102 Gajjar et al. (2018) (0.041 - 0.355) $t_w^{-1}$
+    >> FRB180916.J0158+65 bursts (0.030 - 0.267) $t_w^{-1}$
+    >> FRB180814.J0422+73 bursts (0.079 - 0.240) $t_w^{-1}$
+* i might extract the end of section 4 into the conclusion and move some of the "SM" into the discussion
+* im tempted to remake a version of figure 3 with the data i have using the drifts instead of angle but otherwise i might cut it
+* should i move the model discussion stuff into section 4?
+    >> fuck it two discussion sections:
+        >intro -> model (intro 2) -> burst analysis (methods) -> results -> measurement discussion -> model discussion -> conclusion
+
+## feb 26
+* trimmed down the masked signal to be two panels instead of three
+* reformulate the use of sub-burst 23 in the masking section as an example
+
+## mar 11
+* reformulate angle vs duration as discussion instead of as robustness test
