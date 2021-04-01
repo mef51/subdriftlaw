@@ -527,3 +527,19 @@ $$
 
 ## mar 11
 * reformulate angle vs duration as discussion instead of as robustness test
+
+## mar 25
+* redo drift/nu^2 vs nu
+    * error bars are smaller when accounting for wider range of drifts??
+MHz/ms  * (1/MHz^2)
+1e9s^-2 * (1/1e12s^-2)
+1e9s^-2 * (s^2/1e12)
+1e9/1e12
+1/1000
+
+## mar 27
+* happy birthday zahra
+* drift_max/drift_min are misnamed in `driftranges`, these are technically drift_over_nuobs_max/min. I think this is just a naming error and shouldn't cause other problems..
+
+## mar 31
+* finish figure 5
