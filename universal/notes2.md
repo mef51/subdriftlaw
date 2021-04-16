@@ -543,3 +543,15 @@ MHz/ms  * (1/MHz^2)
 
 ## mar 31
 * finish figure 5
+
+## apr 14
+* output chisq for all fits
+
+## apr 15
+* the lines in fig 1 doesn't show 'optimal' dm, it shows a representative dm estimated with the assumption that the three sources follow the same scaling of the law and that includes measurements from the most bursts.
+    * minimizing standard deviation or reduced chisquared of the fit excludes some bursts completely.
+* chisq residuals appear to be correct
+
+## apr 16
+* oops wrong sigma used in chisq
+* the fit where all sources line up is found when optimizing for reduced chisquared AND requiring that all bursts be included
