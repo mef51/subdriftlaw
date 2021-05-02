@@ -555,3 +555,21 @@ MHz/ms  * (1/MHz^2)
 ## apr 16
 * oops wrong sigma used in chisq
 * the fit where all sources line up is found when optimizing for reduced chisquared AND requiring that all bursts be included
+
+## apr 20
+* fixed several errors regarding errors and which error to use when.
+    * the 2d gaussian model errors should be used for all fits of A/t_w
+    * the range errors should be displayed on each point
+    * previously we were using the range errors to find the A/t_w fits
+    * this changes the optimal DM a bit but the optimal fits for each source are still nearly identical
+
+## apr 26
+* reworked the exclusion section of the paper
+* reworked fig 1 caption
+
+## apr 29
+* restructured paper. added an appendix, folded other sections into discussion
+* look at the noise section next i think it can be trimmed down
+
+## may 1
+* add DM trace feature to plots. this traces the change of measurements as DM changes
