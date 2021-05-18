@@ -573,3 +573,18 @@ MHz/ms  * (1/MHz^2)
 
 ## may 1
 * add DM trace feature to plots. this traces the change of measurements as DM changes
+
+## may 3
+* we should probably update our naming convention for the sources since everyone else seems to be. or add a sentence in the intro ('frb180916.j015.. aka frb20180916B')
+
+## may 4
+* for meeting:
+    * paper edits
+        * footnote with our definition of drift
+        * simplify dm range limitng paragraph
+    * referee points 5-7
+    * point 1
+    * point 3
+
+## may 18
+* resubmit
