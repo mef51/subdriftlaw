@@ -588,3 +588,6 @@ MHz/ms  * (1/MHz^2)
 
 ## may 18
 * resubmit
+
+## may 26
+* pretty sure measuring the drift rate is identical to measuring the slope via the ACF... just feed in all the bursts together. See burst #180917
