@@ -32,6 +32,9 @@ def subsample(m, nfreq, ntime):
 	n = np.nanmean(m.reshape(-1, m.shape[0]//nfreq, m.shape[1]), axis=1)
 	return np.nanmean(n.reshape(n.shape[0], -1, n.shape[1]//ntime), axis=2)
 
+def subtractbg(wfall, tleft: int=0, tright: int=1):
+	return wfall - wfall[:, tleft:tright].mean(axis=1)[:, None]
+
 def moments(data):
 	"""Returns (height, x, y, width_x, width_y)
 	the gaussian parameters of a 2D distribution by calculating its
@@ -67,6 +70,42 @@ def fitgaussiannlsq(data, p0=[], sigma=0, bounds=(-np.inf, np.inf)):
 										  absolute_sigma=True, bounds=bounds)
 	return popt, pcov
 
+def _dedisperse(wfall, dm, freq, dt):
+	"""Dedisperse a dynamic spectrum.
+
+	Parameters
+	----------
+	wfall : array_like
+		Dynamic spectra of shape (nchan, nsamp).
+	dm : float
+		Dispersion measure to dedisperse to, in pc cm-3.
+	freq : array_like
+		Center frequencies of all channels, in MHz. Should have shape nchan.
+	dt : float
+		Sampling time, in s.
+
+	Returns
+	-------
+	wfall : array_like
+		Dedispersed dynamic spectra of shape (nchan, nsamp).
+
+	"""
+	k_dm = 1. / 2.41e-4
+	dedisp = np.zeros_like(wfall)
+
+	ref_freq = freq[0]### ORIGINAL
+	# ref_freq = freq[-1]
+	# print("ref_freq", ref_freq)
+
+	shift = (k_dm * dm * (ref_freq ** -2 - freq ** -2) / dt) ### ORIGINAL (low freq anchor)
+	# shift = (k_dm * dm * (freq ** -2 - ref_freq ** -2) / dt)
+	shift = shift.round().astype(int)
+
+	for i, ts in enumerate(wfall):
+		dedisp[i] = np.roll(ts, shift[i])
+
+	return dedisp
+
 def dedisperse(intensity, DM, nu_low, df_mhz, dt_ms, cshift=0):
 	dedispersed = np.copy(intensity)
 
@@ -90,6 +129,15 @@ def dedisperse(intensity, DM, nu_low, df_mhz, dt_ms, cshift=0):
 	dedispersed = np.roll(dedispersed, cshift, axis=1)
 
 	return dedispersed
+
+def getExtents(wfall, df:float=1.0, dt:float=1.0, lowest_freq:float=1.0):
+	extents = (0,
+			   dt*wfall.shape[1],
+			   lowest_freq,
+			   lowest_freq + df*wfall.shape[0])
+
+	corrextents = (-extents[1], extents[1], -(extents[3]-extents[2])*2, (extents[3]-extents[2])*2)
+	return extents, corrextents
 
 def autocorr2d(data):
 
@@ -125,8 +173,10 @@ def autocorr2d(data):
 
 	return temp_array_b[:-1,:-1]#/float(nx*ny)
 
-def processBurst(burstwindow, burstkey, fres_MHz, tres_ms, lowest_freq, p0=[], popt_custom=[],
-				 bounds=(-np.inf, np.inf), nclip=None, clip=None):
+def processBurst(burstwindow, fres_MHz, tres_ms, lowest_freq, burstkey=1, p0=[], popt_custom=[],
+				 bounds=(-np.inf, np.inf), nclip=None, clip=None, plot=False,
+				 sigmawindow=(0,50),
+				 verbose=True):
 	"""
 	Given a waterfall of a burst, will use the 2d autocorrelation+gaussian fitting method to
 	find the drift and make a plot of the burst and fit.
@@ -138,19 +188,20 @@ def processBurst(burstwindow, burstkey, fres_MHz, tres_ms, lowest_freq, p0=[], p
 	if nclip != None or clip != None:
 		corr = np.clip(corr, nclip, clip)
 
-	#### Autocorr noise TODO: generalize sample window
-	autocorr_sigma = np.std( corr[:, 0:50] )
+	#### Autocorr noise
+	autocorr_sigma = np.std( corr[:, sigmawindow[0]:sigmawindow[1]] )
 
 	#### Fit Gaussian to autocorrelation.
-	print("finding fit {}...".format(burstkey))
 	try:
-		popt, pcov = fitgaussiannlsq(corr, p0=p0, sigma=autocorr_sigma, bounds=bounds)
-		perr = np.sqrt(np.diag(pcov))
-		print('solution nlsq:', popt)
-		# print('parameter 1sigma:', perr)
-		# print('pcov diag:', np.diag(pcov))
+		if popt_custom != []:
+			popt, perr = popt_custom, [-1,-1,-1,-1,-1,-1]
+		else:
+			popt, pcov = fitgaussiannlsq(corr, p0=p0, sigma=autocorr_sigma, bounds=bounds)
+			perr = np.sqrt(np.diag(pcov))
+
+		if verbose: print('fit parameters:', popt)
 	except (RuntimeError, ValueError):
-		print('no fit found')
+		if verbose: print('no fit found')
 		popt, perr = [-1,-1,-1,-1,-1,-1], [-1,-1,-1,-1,-1,-1]
 		if popt_custom != []:
 			popt = popt_custom
@@ -175,7 +226,8 @@ def processBurst(burstwindow, burstkey, fres_MHz, tres_ms, lowest_freq, p0=[], p
 	center_f = findCenter(burstwindow)*fres_MHz + lowest_freq
 
 	#### Plot
-	_plotresult(burstwindow, corr, fitmap, burstkey, center_f, popt, fres_MHz, tres_ms, lowest_freq)
+	if plot:
+		_plotresult(burstwindow, corr, fitmap, burstkey, center_f, popt, fres_MHz, tres_ms, lowest_freq)
 
 	return (
 		drift,
@@ -184,8 +236,13 @@ def processBurst(burstwindow, burstkey, fres_MHz, tres_ms, lowest_freq, p0=[], p
 		perr,
 		theta,
 		red_chisq,
-		center_f
+		center_f,
+		fitmap
 	)
+
+def plotStampcard():
+	""" TODO: generalize the code that plots marthi's bursts from ReadDataSandbox.ipynb """
+	pass
 
 def _plotresult(burstwindow, corr, fitmap, burstkey, center_f, popt, freq_res, time_res,
 				lowest_freq, ploti=None):
