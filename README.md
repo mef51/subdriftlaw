@@ -16,11 +16,11 @@ The terminology in the literature concerning these measurements has not settled,
 * A 'sub-burst' is a single pulse from an FRB event, even if a single FRB event only contains a single pulse.
 * The sub-burst 'drift rate' is the change in frequency between individual resolved sub-bursts in an FRB event that contains multiple components, ie. a train of pulses.
 * The 'sad trombone' phenomenon refers to the tendency of sub-bursts in pulse trains to drift downwards in frequency. However, the opposite effect, 'happy trombone', where the sub-bursts drift upward in frequency is also possible.
-* The sub-burst 'slope' is the change in frequency within a single sub-burst (ie. a single pulse), and is analogous to the sub-burst drift rate
+* The sub-burst 'slope' is the change in frequency within a single sub-burst (ie. a single pulse), and is analogous to the sub-burst drift rate for a single pulse.
 
-Note that almost every reference of "drift" in the codebase is referring specifically to the sub-burst slope. Unless you are confident that an FRB's structure is resolved in time and that a sub-burst is not actually several sub-bursts smeared together, it can be difficult to know if you have measured the sub-burst slope or the sub-burst drift rate. Regardless, the measurement of interest for these works is the sub-burst slope, and whenever possible different components of FRBs are separated in order to obtain the slope as opposed to the drift rate.
+Note that due to a late change in word use, almost every reference of "drift" in the codebase is referring primarily to the sub-burst slope. However, unless you are confident that an FRB's structure is resolved in time and that a sub-burst is not actually several sub-bursts smeared together, it can be difficult to know if you have measured the sub-burst slope or the sub-burst drift rate. Regardless, the measurement of interest for these works is primarily the sub-burst slope, and whenever possible different components of FRBs are separated in order to obtain the slope as opposed to the drift rate.
 
-The following figure illustrates the difference between the two measurements.
+The following figure (adapted from [Gajjar et al. 2018](https://ui.adsabs.harvard.edu/abs/2018ApJ...863....2G/abstract)) illustrates the difference between the two measurements.
 
 ![measurement diagram](figures/measurements_fig.png)
 
@@ -29,7 +29,7 @@ If the bursts are unresolved, then the drift rate measurement becomes a slope me
 # Key files
 
 Many of the scripts and notebooks included in the repo are my rough work and experiments.
-The following files are what ended up published and are probably the ones you would want to look at:
+The following files are what resulted in published figures and are probably the ones you would want to look at:
 
 * [`ProcessBursts.ipynb`](https://github.com/mef51/sadtrombone/blob/master/ProcessBursts.ipynb): Processes bursts from FRB121102
 * [`Process180814.py`](https://github.com/mef51/sadtrombone/blob/master/universal/Process180814.py): Processes bursts from FRB180814.J0422+73
