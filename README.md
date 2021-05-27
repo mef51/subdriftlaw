@@ -12,7 +12,8 @@ This repository primarily contains code for measuring the sub-burst slope of FRB
 
 The terminology in the literature concerning these measurements has not settled, so we repeat here what we mean when we say the following terms:
 
-* A 'sub-burst' is a single pulse from and FRB event, even if a single FRB event contains a train of pulses.
+* A 'burst' is an FRB event, on the scale of milliseconds, which can contain a single or multiple pulses/components.
+* A 'sub-burst' is a single pulse from an FRB event, even if a single FRB event only contains a single pulse.
 * The sub-burst 'drift rate' is the change in frequency between individual resolved sub-bursts in an FRB event that contains multiple components, ie. a train of pulses.
 * The 'sad trombone' phenomenon refers to the tendency of sub-bursts in pulse trains to drift downwards in frequency. However, the opposite effect, 'happy trombone', where the sub-bursts drift upward in frequency is also possible.
 * The sub-burst 'slope' is the change in frequency within a single sub-burst (ie. a single pulse), and is analogous to the sub-burst drift rate
