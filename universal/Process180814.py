@@ -212,7 +212,7 @@ def processBurst(burstwindow, burstkey, p0=[], popt_custom=[], bounds=(-np.inf, 
 			   lowest_freq - freq_res/2.,
 			   lowest_freq + freq_res*burstwindow.shape[0])
 
-	corrextents = (-extents[1], extents[1], -(extents[3]-extents[2])*2, (extents[3]-extents[2])*2)
+	corrextents = (-extents[1], extents[1], -(extents[3]-extents[2]), (extents[3]-extents[2]))
 
 	nrows = 7
 	if ploti == None:
